@@ -5993,7 +5993,7 @@ var drawPaths = exports.drawPaths = function drawPaths(_ref10) {
     });
 
     // paths creation
-    var enterPaths = paths.enter().append('line').style("pointer-events", "none").attr('d', function (d) {
+    var enterPaths = paths.enter().append('path').style("pointer-events", "none").attr('d', function (d) {
       return d.path;
     }).attr('data-info', getDataInfoHandler).attr('opacity', 0).attr("stroke-width", '0').transition().ease(_d3Ease.easePolyInOut).delay(function (d, i) {
       return i * 100;

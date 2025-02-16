@@ -293,7 +293,7 @@ const drawPaths = ({
 
         // paths creation
         const enterPaths = paths.enter()
-            .append('line')
+            .append('path')
             .style("pointer-events", "none")
             .attr('d', d => d.path)
             .attr('data-info', getDataInfoHandler)
