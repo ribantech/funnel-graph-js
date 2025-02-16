@@ -334,7 +334,7 @@ class FunnelGraph {
         const resizeDefaultFactors = { factor: { width: 0.4, height: 0.4 } };
         if (resize && typeof resize === "boolean") {
             resize = resizeDefaultFactors;
-        } 
+        }
         this.resize = resize;
     }
 
@@ -573,20 +573,20 @@ class FunnelGraph {
         const context = this;
         const container = getContainer(context.containerSelector);
         const resizeFactors = context.getResize()?.factor;
-    
+
         if (container) {
-    
+
             const containerNode = container.node();
             const width = context.getWidth();
             const height = context.getHeight();
-            
+
             const adjustmentWidthFactor = resizeFactors.width || 0.1;
             const adjustmentHeightFactor = resizeFactors?.height || 0.5;
             let newWidth = +containerNode.clientWidth - (width * adjustmentWidthFactor);
             let newHeight = +containerNode.clientHeight - (height * adjustmentHeightFactor);
 
             const aspectRatio = 1 / 1
-            
+
             newWidth = newWidth * aspectRatio;
             newHeight = newHeight * aspectRatio;
 

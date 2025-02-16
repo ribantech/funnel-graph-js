@@ -1,8 +1,8 @@
-const defaultColors = ['#FF4589', '#FF5050',
-    '#05DF9D', '#4FF2FD',
-    '#2D9CDB', '#A0BBFF',
-    '#FFD76F', '#F2C94C',
-    '#FF9A9A', '#FFB178'];
+const defaultColors = ["#FF4589", "#FF5050",
+    "#05DF9D", "#4FF2FD",
+    "#2D9CDB", "#A0BBFF",
+    "#FFD76F", "#F2C94C",
+    "#FF9A9A", "#FFB178"];
 
 const getDefaultColors = (number) => {
     const colors = [...defaultColors];

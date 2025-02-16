@@ -1,1 +1,3 @@
-module.exports = require('./src/js/main').default;
+import main from "./src/js/main";
+
+export default main || main;

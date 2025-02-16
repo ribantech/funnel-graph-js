@@ -70,7 +70,7 @@ export const addMouseEventIfNotExists = ({ context, updateLinePositions }) => (p
                                     .map((item) => `<div><strong>${item?.name}</strong>: ${labelFormatCallback({ ...handlerMetadata, value: item?.value })}</div>`)
                                     .join("");
                             }
-                            
+
                             tooltipElement
                                 // TODO: when exceeding the document area - move the tooltip up/down or left/right
                                 // according to the position (e.g. top /right window eƒxceeded or right) 
@@ -78,9 +78,9 @@ export const addMouseEventIfNotExists = ({ context, updateLinePositions }) => (p
                                 .style("top", (clickPoint.y + 10) + "px")
                                 .style("display", "flex")
                                 .style("align-items", sectionDetails ? "start" : "center")
-                                .style("flex-direction", "column") 
-                                .style("height", "auto") 
-                                .style("gap", "10px") 
+                                .style("flex-direction", "column")
+                                .style("height", "auto")
+                                .style("gap", "10px")
                                 .style("padding", "4px")
                                 .html(tooltipText)
                                 .style("opacity", "1")
@@ -197,7 +197,7 @@ export const addLabelMouseEventIfNotExists = ({ context }) => (groupLabels, inde
     const clickLabelHandler = (typeof callbacks?.label === "function");
     const groupLabelsExists = !!groupLabels?.on('click');
     if (!groupLabelsExists && clickLabelHandler) {
-        groupLabels.on("click", (event, d) => callbacks.label(event, { ...d, index}));
+        groupLabels.on("click", (event, d) => callbacks.label(event, { ...d, index }));
         groupLabels.style("cursor", "pointer")
     }
 }

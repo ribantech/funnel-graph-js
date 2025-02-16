@@ -24,7 +24,7 @@ export const getLogger = ({ module }) => {
 
         return `color: #000000;`;
     };
-    
+
     const _prefix = `${projectName} ${module || ""}`;
     const _formatMessage = (message) => `%c${_prefix}%c %c${message}`;
     const _wrapConsoleMethod = (method) => (...args) => console[method].apply(console, [_formatMessage(args[0]), _style, "", getColorStyle(method), ...args.slice(1)]);
@@ -36,10 +36,10 @@ export const getLogger = ({ module }) => {
     const debug = _wrapConsoleMethod("debug");
 
     return {
-      log,
-      info,
-      warn,
-      error,
-      debug
+        log,
+        info,
+        warn,
+        error,
+        debug
     };
 };

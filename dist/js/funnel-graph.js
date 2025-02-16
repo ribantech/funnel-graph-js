@@ -1,9 +1,15 @@
 (function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.FunnelGraph = f()}})(function(){var define,module,exports;return (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 "use strict";
 
-module.exports = require('./src/js/main').default;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+var _main = _interopRequireDefault(require("./src/js/main"));
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var _default = exports["default"] = _main["default"] || _main["default"];
 
-},{"./src/js/main":142}],2:[function(require,module,exports){
+},{"./src/js/main":141}],2:[function(require,module,exports){
 "use strict";
 
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -13,14 +19,14 @@ Object.defineProperty(exports, "__esModule", {
 exports.Color = Color;
 exports.Rgb = Rgb;
 exports.darker = exports.brighter = void 0;
-exports.default = color;
+exports["default"] = color;
 exports.hsl = hsl;
 exports.hslConvert = hslConvert;
 exports.rgb = rgb;
 exports.rgbConvert = rgbConvert;
 var _define = _interopRequireWildcard(require("./define.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function Color() {}
 var _darker = exports.darker = 0.7;
 var _brighter = exports.brighter = 1 / _darker;
@@ -184,7 +190,7 @@ var named = {
   yellow: 0xffff00,
   yellowgreen: 0x9acd32
 };
-(0, _define.default)(Color, color, {
+(0, _define["default"])(Color, color, {
   copy: function copy(channels) {
     return Object.assign(new this.constructor(), this, channels);
   },
@@ -250,7 +256,7 @@ function Rgb(r, g, b, opacity) {
   this.b = +b;
   this.opacity = +opacity;
 }
-(0, _define.default)(Rgb, rgb, (0, _define.extend)(Color, {
+(0, _define["default"])(Rgb, rgb, (0, _define.extend)(Color, {
   brighter: function brighter(k) {
     k = k == null ? _brighter : Math.pow(_brighter, k);
     return new Rgb(this.r * k, this.g * k, this.b * k, this.opacity);
@@ -331,7 +337,7 @@ function Hsl(h, s, l, opacity) {
   this.l = +l;
   this.opacity = +opacity;
 }
-(0, _define.default)(Hsl, hsl, (0, _define.extend)(Color, {
+(0, _define["default"])(Hsl, hsl, (0, _define.extend)(Color, {
   brighter: function brighter(k) {
     k = k == null ? _brighter : Math.pow(_brighter, k);
     return new Hsl(this.h, this.s, this.l * k, this.opacity);
@@ -380,12 +386,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Cubehelix = Cubehelix;
-exports.default = cubehelix;
+exports["default"] = cubehelix;
 var _define = _interopRequireWildcard(require("./define.js"));
 var _color = require("./color.js");
 var _math = require("./math.js");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var A = -0.14861,
   B = +1.78277,
   C = -0.29227,
@@ -417,7 +423,7 @@ function Cubehelix(h, s, l, opacity) {
   this.l = +l;
   this.opacity = +opacity;
 }
-(0, _define.default)(Cubehelix, cubehelix, (0, _define.extend)(_color.Color, {
+(0, _define["default"])(Cubehelix, cubehelix, (0, _define.extend)(_color.Color, {
   brighter: function brighter(k) {
     k = k == null ? _color.brighter : Math.pow(_color.brighter, k);
     return new Cubehelix(this.h, this.s, this.l * k, this.opacity);
@@ -442,7 +448,7 @@ function Cubehelix(h, s, l, opacity) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 exports.extend = extend;
 function _default(constructor, factory, prototype) {
   constructor.prototype = factory.prototype = prototype;
@@ -464,13 +470,13 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "color", {
   enumerable: true,
   get: function get() {
-    return _color.default;
+    return _color["default"];
   }
 });
 Object.defineProperty(exports, "cubehelix", {
   enumerable: true,
   get: function get() {
-    return _cubehelix.default;
+    return _cubehelix["default"];
   }
 });
 Object.defineProperty(exports, "gray", {
@@ -494,7 +500,7 @@ Object.defineProperty(exports, "hsl", {
 Object.defineProperty(exports, "lab", {
   enumerable: true,
   get: function get() {
-    return _lab.default;
+    return _lab["default"];
   }
 });
 Object.defineProperty(exports, "lch", {
@@ -512,9 +518,9 @@ Object.defineProperty(exports, "rgb", {
 var _color = _interopRequireWildcard(require("./color.js"));
 var _lab = _interopRequireWildcard(require("./lab.js"));
 var _cubehelix = _interopRequireDefault(require("./cubehelix.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 
 },{"./color.js":2,"./cubehelix.js":3,"./lab.js":6}],6:[function(require,module,exports){
 "use strict";
@@ -525,7 +531,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.Hcl = Hcl;
 exports.Lab = Lab;
-exports.default = lab;
+exports["default"] = lab;
 exports.gray = gray;
 exports.hcl = hcl;
 exports.lch = lch;
@@ -533,7 +539,7 @@ var _define = _interopRequireWildcard(require("./define.js"));
 var _color = require("./color.js");
 var _math = require("./math.js");
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 // https://observablehq.com/@mbostock/lab-and-rgb
 var K = 18,
   Xn = 0.96422,
@@ -571,7 +577,7 @@ function Lab(l, a, b, opacity) {
   this.b = +b;
   this.opacity = +opacity;
 }
-(0, _define.default)(Lab, lab, (0, _define.extend)(_color.Color, {
+(0, _define["default"])(Lab, lab, (0, _define.extend)(_color.Color, {
   brighter: function brighter(k) {
     return new Lab(this.l + K * (k == null ? 1 : k), this.a, this.b, this.opacity);
   },
@@ -624,7 +630,7 @@ function hcl2lab(o) {
   var h = o.h * _math.radians;
   return new Lab(o.l, Math.cos(h) * o.c, Math.sin(h) * o.c, o.opacity);
 }
-(0, _define.default)(Hcl, hcl, (0, _define.extend)(_color.Color, {
+(0, _define["default"])(Hcl, hcl, (0, _define.extend)(_color.Color, {
   brighter: function brighter(k) {
     return new Hcl(this.h, this.c, this.l + K * (k == null ? 1 : k), this.opacity);
   },
@@ -652,7 +658,7 @@ var degrees = exports.degrees = 180 / Math.PI;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 var noop = {
   value: function value() {}
 };
@@ -737,7 +743,7 @@ function set(type, name, callback) {
   });
   return type;
 }
-var _default = exports.default = dispatch;
+var _default = exports["default"] = dispatch;
 
 },{}],9:[function(require,module,exports){
 "use strict";
@@ -748,11 +754,11 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "dispatch", {
   enumerable: true,
   get: function get() {
-    return _dispatch.default;
+    return _dispatch["default"];
   }
 });
 var _dispatch = _interopRequireDefault(require("./dispatch.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 
 },{"./dispatch.js":8}],10:[function(require,module,exports){
 "use strict";
@@ -1267,15 +1273,15 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 exports.genericArray = genericArray;
 var _value = _interopRequireDefault(require("./value.js"));
 var _numberArray = _interopRequireWildcard(require("./numberArray.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(a, b) {
-  return ((0, _numberArray.isNumberArray)(b) ? _numberArray.default : genericArray)(a, b);
+  return ((0, _numberArray.isNumberArray)(b) ? _numberArray["default"] : genericArray)(a, b);
 }
 function genericArray(a, b) {
   var nb = b ? b.length : 0,
@@ -1283,7 +1289,7 @@ function genericArray(a, b) {
     x = new Array(na),
     c = new Array(nb),
     i;
-  for (i = 0; i < na; ++i) x[i] = (0, _value.default)(a[i], b[i]);
+  for (i = 0; i < na; ++i) x[i] = (0, _value["default"])(a[i], b[i]);
   for (; i < nb; ++i) c[i] = b[i];
   return function (t) {
     for (i = 0; i < na; ++i) c[i] = x[i](t);
@@ -1298,7 +1304,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.basis = basis;
-exports.default = _default;
+exports["default"] = _default;
 function basis(t1, v0, v1, v2, v3) {
   var t2 = t1 * t1,
     t3 = t2 * t1;
@@ -1322,7 +1328,7 @@ function _default(values) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _basis = require("./basis.js");
 function _default(values) {
   var n = values.length;
@@ -1342,11 +1348,11 @@ function _default(values) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = nogamma;
+exports["default"] = nogamma;
 exports.gamma = gamma;
 exports.hue = hue;
 var _constant = _interopRequireDefault(require("./constant.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function linear(a, d) {
   return function (t) {
     return a + t * d;
@@ -1359,16 +1365,16 @@ function exponential(a, b, y) {
 }
 function hue(a, b) {
   var d = b - a;
-  return d ? linear(a, d > 180 || d < -180 ? d - 360 * Math.round(d / 360) : d) : (0, _constant.default)(isNaN(a) ? b : a);
+  return d ? linear(a, d > 180 || d < -180 ? d - 360 * Math.round(d / 360) : d) : (0, _constant["default"])(isNaN(a) ? b : a);
 }
 function gamma(y) {
   return (y = +y) === 1 ? nogamma : function (a, b) {
-    return b - a ? exponential(a, b, y) : (0, _constant.default)(isNaN(a) ? b : a);
+    return b - a ? exponential(a, b, y) : (0, _constant["default"])(isNaN(a) ? b : a);
   };
 }
 function nogamma(a, b) {
   var d = b - a;
-  return d ? linear(a, d) : (0, _constant.default)(isNaN(a) ? b : a);
+  return d ? linear(a, d) : (0, _constant["default"])(isNaN(a) ? b : a);
 }
 
 },{"./constant.js":26}],26:[function(require,module,exports){
@@ -1377,8 +1383,8 @@ function nogamma(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
-var _default = exports.default = function _default(x) {
+exports["default"] = void 0;
+var _default = exports["default"] = function _default(x) {
   return function () {
     return x;
   };
@@ -1391,19 +1397,19 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.cubehelixLong = void 0;
+exports["default"] = exports.cubehelixLong = void 0;
 var _d3Color = require("d3-color");
 var _color = _interopRequireWildcard(require("./color.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function cubehelix(hue) {
   return function cubehelixGamma(y) {
     y = +y;
     function cubehelix(start, end) {
       var h = hue((start = (0, _d3Color.cubehelix)(start)).h, (end = (0, _d3Color.cubehelix)(end)).h),
-        s = (0, _color.default)(start.s, end.s),
-        l = (0, _color.default)(start.l, end.l),
-        opacity = (0, _color.default)(start.opacity, end.opacity);
+        s = (0, _color["default"])(start.s, end.s),
+        l = (0, _color["default"])(start.l, end.l),
+        opacity = (0, _color["default"])(start.opacity, end.opacity);
       return function (t) {
         start.h = h(t);
         start.s = s(t);
@@ -1416,8 +1422,8 @@ function cubehelix(hue) {
     return cubehelix;
   }(1);
 }
-var _default = exports.default = cubehelix(_color.hue);
-var cubehelixLong = exports.cubehelixLong = cubehelix(_color.default);
+var _default = exports["default"] = cubehelix(_color.hue);
+var cubehelixLong = exports.cubehelixLong = cubehelix(_color["default"]);
 
 },{"./color.js":25,"d3-color":5}],28:[function(require,module,exports){
 "use strict";
@@ -1425,7 +1431,7 @@ var cubehelixLong = exports.cubehelixLong = cubehelix(_color.default);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(a, b) {
   var d = new Date();
   return a = +a, b = +b, function (t) {
@@ -1439,7 +1445,7 @@ function _default(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(range) {
   var n = range.length;
   return function (t) {
@@ -1454,17 +1460,17 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.hclLong = exports.default = void 0;
+exports.hclLong = exports["default"] = void 0;
 var _d3Color = require("d3-color");
 var _color = _interopRequireWildcard(require("./color.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function hcl(hue) {
   return function (start, end) {
     var h = hue((start = (0, _d3Color.hcl)(start)).h, (end = (0, _d3Color.hcl)(end)).h),
-      c = (0, _color.default)(start.c, end.c),
-      l = (0, _color.default)(start.l, end.l),
-      opacity = (0, _color.default)(start.opacity, end.opacity);
+      c = (0, _color["default"])(start.c, end.c),
+      l = (0, _color["default"])(start.l, end.l),
+      opacity = (0, _color["default"])(start.opacity, end.opacity);
     return function (t) {
       start.h = h(t);
       start.c = c(t);
@@ -1474,8 +1480,8 @@ function hcl(hue) {
     };
   };
 }
-var _default = exports.default = hcl(_color.hue);
-var hclLong = exports.hclLong = hcl(_color.default);
+var _default = exports["default"] = hcl(_color.hue);
+var hclLong = exports.hclLong = hcl(_color["default"]);
 
 },{"./color.js":25,"d3-color":5}],31:[function(require,module,exports){
 "use strict";
@@ -1484,17 +1490,17 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.hslLong = exports.default = void 0;
+exports.hslLong = exports["default"] = void 0;
 var _d3Color = require("d3-color");
 var _color = _interopRequireWildcard(require("./color.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function hsl(hue) {
   return function (start, end) {
     var h = hue((start = (0, _d3Color.hsl)(start)).h, (end = (0, _d3Color.hsl)(end)).h),
-      s = (0, _color.default)(start.s, end.s),
-      l = (0, _color.default)(start.l, end.l),
-      opacity = (0, _color.default)(start.opacity, end.opacity);
+      s = (0, _color["default"])(start.s, end.s),
+      l = (0, _color["default"])(start.l, end.l),
+      opacity = (0, _color["default"])(start.opacity, end.opacity);
     return function (t) {
       start.h = h(t);
       start.s = s(t);
@@ -1504,8 +1510,8 @@ function hsl(hue) {
     };
   };
 }
-var _default = exports.default = hsl(_color.hue);
-var hslLong = exports.hslLong = hsl(_color.default);
+var _default = exports["default"] = hsl(_color.hue);
+var hslLong = exports.hslLong = hsl(_color["default"]);
 
 },{"./color.js":25,"d3-color":5}],32:[function(require,module,exports){
 "use strict";
@@ -1513,7 +1519,7 @@ var hslLong = exports.hslLong = hsl(_color.default);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _color = require("./color.js");
 function _default(a, b) {
   var i = (0, _color.hue)(+a, +b);
@@ -1533,31 +1539,31 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "interpolate", {
   enumerable: true,
   get: function get() {
-    return _value.default;
+    return _value["default"];
   }
 });
 Object.defineProperty(exports, "interpolateArray", {
   enumerable: true,
   get: function get() {
-    return _array.default;
+    return _array["default"];
   }
 });
 Object.defineProperty(exports, "interpolateBasis", {
   enumerable: true,
   get: function get() {
-    return _basis.default;
+    return _basis["default"];
   }
 });
 Object.defineProperty(exports, "interpolateBasisClosed", {
   enumerable: true,
   get: function get() {
-    return _basisClosed.default;
+    return _basisClosed["default"];
   }
 });
 Object.defineProperty(exports, "interpolateCubehelix", {
   enumerable: true,
   get: function get() {
-    return _cubehelix.default;
+    return _cubehelix["default"];
   }
 });
 Object.defineProperty(exports, "interpolateCubehelixLong", {
@@ -1569,19 +1575,19 @@ Object.defineProperty(exports, "interpolateCubehelixLong", {
 Object.defineProperty(exports, "interpolateDate", {
   enumerable: true,
   get: function get() {
-    return _date.default;
+    return _date["default"];
   }
 });
 Object.defineProperty(exports, "interpolateDiscrete", {
   enumerable: true,
   get: function get() {
-    return _discrete.default;
+    return _discrete["default"];
   }
 });
 Object.defineProperty(exports, "interpolateHcl", {
   enumerable: true,
   get: function get() {
-    return _hcl.default;
+    return _hcl["default"];
   }
 });
 Object.defineProperty(exports, "interpolateHclLong", {
@@ -1593,7 +1599,7 @@ Object.defineProperty(exports, "interpolateHclLong", {
 Object.defineProperty(exports, "interpolateHsl", {
   enumerable: true,
   get: function get() {
-    return _hsl.default;
+    return _hsl["default"];
   }
 });
 Object.defineProperty(exports, "interpolateHslLong", {
@@ -1605,37 +1611,37 @@ Object.defineProperty(exports, "interpolateHslLong", {
 Object.defineProperty(exports, "interpolateHue", {
   enumerable: true,
   get: function get() {
-    return _hue.default;
+    return _hue["default"];
   }
 });
 Object.defineProperty(exports, "interpolateLab", {
   enumerable: true,
   get: function get() {
-    return _lab.default;
+    return _lab["default"];
   }
 });
 Object.defineProperty(exports, "interpolateNumber", {
   enumerable: true,
   get: function get() {
-    return _number.default;
+    return _number["default"];
   }
 });
 Object.defineProperty(exports, "interpolateNumberArray", {
   enumerable: true,
   get: function get() {
-    return _numberArray.default;
+    return _numberArray["default"];
   }
 });
 Object.defineProperty(exports, "interpolateObject", {
   enumerable: true,
   get: function get() {
-    return _object.default;
+    return _object["default"];
   }
 });
 Object.defineProperty(exports, "interpolateRgb", {
   enumerable: true,
   get: function get() {
-    return _rgb.default;
+    return _rgb["default"];
   }
 });
 Object.defineProperty(exports, "interpolateRgbBasis", {
@@ -1653,13 +1659,13 @@ Object.defineProperty(exports, "interpolateRgbBasisClosed", {
 Object.defineProperty(exports, "interpolateRound", {
   enumerable: true,
   get: function get() {
-    return _round.default;
+    return _round["default"];
   }
 });
 Object.defineProperty(exports, "interpolateString", {
   enumerable: true,
   get: function get() {
-    return _string.default;
+    return _string["default"];
   }
 });
 Object.defineProperty(exports, "interpolateTransformCss", {
@@ -1677,19 +1683,19 @@ Object.defineProperty(exports, "interpolateTransformSvg", {
 Object.defineProperty(exports, "interpolateZoom", {
   enumerable: true,
   get: function get() {
-    return _zoom.default;
+    return _zoom["default"];
   }
 });
 Object.defineProperty(exports, "piecewise", {
   enumerable: true,
   get: function get() {
-    return _piecewise.default;
+    return _piecewise["default"];
   }
 });
 Object.defineProperty(exports, "quantize", {
   enumerable: true,
   get: function get() {
-    return _quantize.default;
+    return _quantize["default"];
   }
 });
 var _value = _interopRequireDefault(require("./value.js"));
@@ -1714,8 +1720,8 @@ var _cubehelix = _interopRequireWildcard(require("./cubehelix.js"));
 var _piecewise = _interopRequireDefault(require("./piecewise.js"));
 var _quantize = _interopRequireDefault(require("./quantize.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 
 },{"./array.js":22,"./basis.js":23,"./basisClosed.js":24,"./cubehelix.js":27,"./date.js":28,"./discrete.js":29,"./hcl.js":30,"./hsl.js":31,"./hue.js":32,"./lab.js":34,"./number.js":35,"./numberArray.js":36,"./object.js":37,"./piecewise.js":38,"./quantize.js":39,"./rgb.js":40,"./round.js":41,"./string.js":42,"./transform/index.js":44,"./value.js":46,"./zoom.js":47}],34:[function(require,module,exports){
 "use strict";
@@ -1723,15 +1729,15 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = lab;
+exports["default"] = lab;
 var _d3Color = require("d3-color");
 var _color = _interopRequireDefault(require("./color.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function lab(start, end) {
-  var l = (0, _color.default)((start = (0, _d3Color.lab)(start)).l, (end = (0, _d3Color.lab)(end)).l),
-    a = (0, _color.default)(start.a, end.a),
-    b = (0, _color.default)(start.b, end.b),
-    opacity = (0, _color.default)(start.opacity, end.opacity);
+  var l = (0, _color["default"])((start = (0, _d3Color.lab)(start)).l, (end = (0, _d3Color.lab)(end)).l),
+    a = (0, _color["default"])(start.a, end.a),
+    b = (0, _color["default"])(start.b, end.b),
+    opacity = (0, _color["default"])(start.opacity, end.opacity);
   return function (t) {
     start.l = l(t);
     start.a = a(t);
@@ -1747,7 +1753,7 @@ function lab(start, end) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(a, b) {
   return a = +a, b = +b, function (t) {
     return a * (1 - t) + b * t;
@@ -1760,7 +1766,7 @@ function _default(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 exports.isNumberArray = isNumberArray;
 function _default(a, b) {
   if (!b) b = [];
@@ -1782,9 +1788,9 @@ function isNumberArray(x) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _value = _interopRequireDefault(require("./value.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _default(a, b) {
   var i = {},
@@ -1794,7 +1800,7 @@ function _default(a, b) {
   if (b === null || _typeof(b) !== "object") b = {};
   for (k in b) {
     if (k in a) {
-      i[k] = (0, _value.default)(a[k], b[k]);
+      i[k] = (0, _value["default"])(a[k], b[k]);
     } else {
       c[k] = b[k];
     }
@@ -1811,11 +1817,11 @@ function _default(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = piecewise;
+exports["default"] = piecewise;
 var _value = _interopRequireDefault(require("./value.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function piecewise(interpolate, values) {
-  if (values === undefined) values = interpolate, interpolate = _value.default;
+  if (values === undefined) values = interpolate, interpolate = _value["default"];
   var i = 0,
     n = values.length - 1,
     v = values[0],
@@ -1833,7 +1839,7 @@ function piecewise(interpolate, values) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(interpolator, n) {
   var samples = new Array(n);
   for (var i = 0; i < n; ++i) samples[i] = interpolator(i / (n - 1));
@@ -1847,21 +1853,21 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.rgbBasisClosed = exports.rgbBasis = exports.default = void 0;
+exports.rgbBasisClosed = exports.rgbBasis = exports["default"] = void 0;
 var _d3Color = require("d3-color");
 var _basis = _interopRequireDefault(require("./basis.js"));
 var _basisClosed = _interopRequireDefault(require("./basisClosed.js"));
 var _color = _interopRequireWildcard(require("./color.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-var _default = exports.default = function rgbGamma(y) {
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+var _default = exports["default"] = function rgbGamma(y) {
   var color = (0, _color.gamma)(y);
   function rgb(start, end) {
     var r = color((start = (0, _d3Color.rgb)(start)).r, (end = (0, _d3Color.rgb)(end)).r),
       g = color(start.g, end.g),
       b = color(start.b, end.b),
-      opacity = (0, _color.default)(start.opacity, end.opacity);
+      opacity = (0, _color["default"])(start.opacity, end.opacity);
     return function (t) {
       start.r = r(t);
       start.g = g(t);
@@ -1899,8 +1905,8 @@ function rgbSpline(spline) {
     };
   };
 }
-var rgbBasis = exports.rgbBasis = rgbSpline(_basis.default);
-var rgbBasisClosed = exports.rgbBasisClosed = rgbSpline(_basisClosed.default);
+var rgbBasis = exports.rgbBasis = rgbSpline(_basis["default"]);
+var rgbBasisClosed = exports.rgbBasisClosed = rgbSpline(_basisClosed["default"]);
 
 },{"./basis.js":23,"./basisClosed.js":24,"./color.js":25,"d3-color":5}],41:[function(require,module,exports){
 "use strict";
@@ -1908,7 +1914,7 @@ var rgbBasisClosed = exports.rgbBasisClosed = rgbSpline(_basisClosed.default);
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(a, b) {
   return a = +a, b = +b, function (t) {
     return Math.round(a * (1 - t) + b * t);
@@ -1921,9 +1927,9 @@ function _default(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _number = _interopRequireDefault(require("./number.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var reA = /[-+]?(?:\d+\.?\d*|\.?\d+)(?:[eE][-+]?\d+)?/g,
   reB = new RegExp(reA.source, "g");
 function zero(b) {
@@ -1971,7 +1977,7 @@ function _default(a, b) {
       s[++i] = null;
       q.push({
         i: i,
-        x: (0, _number.default)(am, bm)
+        x: (0, _number["default"])(am, bm)
       });
     }
     bi = reB.lastIndex;
@@ -1998,7 +2004,7 @@ function _default(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 exports.identity = void 0;
 var degrees = 180 / Math.PI;
 var identity = exports.identity = {
@@ -2034,7 +2040,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.interpolateTransformSvg = exports.interpolateTransformCss = void 0;
 var _number = _interopRequireDefault(require("../number.js"));
 var _parse = require("./parse.js");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function interpolateTransform(parse, pxComma, pxParen, degParen) {
   function pop(s) {
     return s.length ? s.pop() + " " : "";
@@ -2044,10 +2050,10 @@ function interpolateTransform(parse, pxComma, pxParen, degParen) {
       var i = s.push("translate(", null, pxComma, null, pxParen);
       q.push({
         i: i - 4,
-        x: (0, _number.default)(xa, xb)
+        x: (0, _number["default"])(xa, xb)
       }, {
         i: i - 2,
-        x: (0, _number.default)(ya, yb)
+        x: (0, _number["default"])(ya, yb)
       });
     } else if (xb || yb) {
       s.push("translate(" + xb + pxComma + yb + pxParen);
@@ -2058,7 +2064,7 @@ function interpolateTransform(parse, pxComma, pxParen, degParen) {
       if (a - b > 180) b += 360;else if (b - a > 180) a += 360; // shortest path
       q.push({
         i: s.push(pop(s) + "rotate(", null, degParen) - 2,
-        x: (0, _number.default)(a, b)
+        x: (0, _number["default"])(a, b)
       });
     } else if (b) {
       s.push(pop(s) + "rotate(" + b + degParen);
@@ -2068,7 +2074,7 @@ function interpolateTransform(parse, pxComma, pxParen, degParen) {
     if (a !== b) {
       q.push({
         i: s.push(pop(s) + "skewX(", null, degParen) - 2,
-        x: (0, _number.default)(a, b)
+        x: (0, _number["default"])(a, b)
       });
     } else if (b) {
       s.push(pop(s) + "skewX(" + b + degParen);
@@ -2079,10 +2085,10 @@ function interpolateTransform(parse, pxComma, pxParen, degParen) {
       var i = s.push(pop(s) + "scale(", null, ",", null, ")");
       q.push({
         i: i - 4,
-        x: (0, _number.default)(xa, xb)
+        x: (0, _number["default"])(xa, xb)
       }, {
         i: i - 2,
-        x: (0, _number.default)(ya, yb)
+        x: (0, _number["default"])(ya, yb)
       });
     } else if (xb !== 1 || yb !== 1) {
       s.push(pop(s) + "scale(" + xb + "," + yb + ")");
@@ -2121,13 +2127,13 @@ exports.parseCss = parseCss;
 exports.parseSvg = parseSvg;
 var _decompose = _interopRequireWildcard(require("./decompose.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 var svgNode;
 
 /* eslint-disable no-undef */
 function parseCss(value) {
   var m = new (typeof DOMMatrix === "function" ? DOMMatrix : WebKitCSSMatrix)(value + "");
-  return m.isIdentity ? _decompose.identity : (0, _decompose.default)(m.a, m.b, m.c, m.d, m.e, m.f);
+  return m.isIdentity ? _decompose.identity : (0, _decompose["default"])(m.a, m.b, m.c, m.d, m.e, m.f);
 }
 function parseSvg(value) {
   if (value == null) return _decompose.identity;
@@ -2135,7 +2141,7 @@ function parseSvg(value) {
   svgNode.setAttribute("transform", value);
   if (!(value = svgNode.transform.baseVal.consolidate())) return _decompose.identity;
   value = value.matrix;
-  return (0, _decompose.default)(value.a, value.b, value.c, value.d, value.e, value.f);
+  return (0, _decompose["default"])(value.a, value.b, value.c, value.d, value.e, value.f);
 }
 
 },{"./decompose.js":43}],46:[function(require,module,exports){
@@ -2144,7 +2150,7 @@ function parseSvg(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Color = require("d3-color");
 var _rgb = _interopRequireDefault(require("./rgb.js"));
 var _array = require("./array.js");
@@ -2155,13 +2161,13 @@ var _string = _interopRequireDefault(require("./string.js"));
 var _constant = _interopRequireDefault(require("./constant.js"));
 var _numberArray = _interopRequireWildcard(require("./numberArray.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _default(a, b) {
   var t = _typeof(b),
     c;
-  return b == null || t === "boolean" ? (0, _constant.default)(b) : (t === "number" ? _number.default : t === "string" ? (c = (0, _d3Color.color)(b)) ? (b = c, _rgb.default) : _string.default : b instanceof _d3Color.color ? _rgb.default : b instanceof Date ? _date.default : (0, _numberArray.isNumberArray)(b) ? _numberArray.default : Array.isArray(b) ? _array.genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? _object.default : _number.default)(a, b);
+  return b == null || t === "boolean" ? (0, _constant["default"])(b) : (t === "number" ? _number["default"] : t === "string" ? (c = (0, _d3Color.color)(b)) ? (b = c, _rgb["default"]) : _string["default"] : b instanceof _d3Color.color ? _rgb["default"] : b instanceof Date ? _date["default"] : (0, _numberArray.isNumberArray)(b) ? _numberArray["default"] : Array.isArray(b) ? _array.genericArray : typeof b.valueOf !== "function" && typeof b.toString !== "function" || isNaN(b) ? _object["default"] : _number["default"])(a, b);
 }
 
 },{"./array.js":22,"./constant.js":26,"./date.js":28,"./number.js":35,"./numberArray.js":36,"./object.js":37,"./rgb.js":40,"./string.js":42,"d3-color":5}],47:[function(require,module,exports){
@@ -2170,7 +2176,7 @@ function _default(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 var epsilon2 = 1e-12;
 function cosh(x) {
   return ((x = Math.exp(x)) + 1 / x) / 2;
@@ -2181,7 +2187,7 @@ function sinh(x) {
 function tanh(x) {
   return ((x = Math.exp(2 * x)) - 1) / (x + 1);
 }
-var _default = exports.default = function zoomRho(rho, rho2, rho4) {
+var _default = exports["default"] = function zoomRho(rho, rho2, rho4) {
   // p0 = [ux0, uy0, w0]
   // p1 = [ux1, uy1, w1]
   function zoom(p0, p1) {
@@ -2238,7 +2244,7 @@ var _default = exports.default = function zoomRho(rho, rho2, rho4) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = array;
+exports["default"] = array;
 // Given something array like (or null), returns something that is strictly an
 // array. This is used to ensure that array-like objects passed to d3.selectAll
 // or selection.selectAll are converted into proper arrays when creating a
@@ -2255,7 +2261,7 @@ function array(x) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(x) {
   return function () {
     return x;
@@ -2268,12 +2274,12 @@ function _default(x) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _creator = _interopRequireDefault(require("./creator.js"));
 var _select = _interopRequireDefault(require("./select.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(name) {
-  return (0, _select.default)((0, _creator.default)(name).call(document.documentElement));
+  return (0, _select["default"])((0, _creator["default"])(name).call(document.documentElement));
 }
 
 },{"./creator.js":51,"./select.js":59}],51:[function(require,module,exports){
@@ -2282,10 +2288,10 @@ function _default(name) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _namespace = _interopRequireDefault(require("./namespace.js"));
 var _namespaces = require("./namespaces.js");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function creatorInherit(name) {
   return function () {
     var document = this.ownerDocument,
@@ -2299,7 +2305,7 @@ function creatorFixed(fullname) {
   };
 }
 function _default(name) {
-  var fullname = (0, _namespace.default)(name);
+  var fullname = (0, _namespace["default"])(name);
   return (fullname.local ? creatorFixed : creatorInherit)(fullname);
 }
 
@@ -2312,79 +2318,79 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "create", {
   enumerable: true,
   get: function get() {
-    return _create.default;
+    return _create["default"];
   }
 });
 Object.defineProperty(exports, "creator", {
   enumerable: true,
   get: function get() {
-    return _creator.default;
+    return _creator["default"];
   }
 });
 Object.defineProperty(exports, "local", {
   enumerable: true,
   get: function get() {
-    return _local.default;
+    return _local["default"];
   }
 });
 Object.defineProperty(exports, "matcher", {
   enumerable: true,
   get: function get() {
-    return _matcher.default;
+    return _matcher["default"];
   }
 });
 Object.defineProperty(exports, "namespace", {
   enumerable: true,
   get: function get() {
-    return _namespace.default;
+    return _namespace["default"];
   }
 });
 Object.defineProperty(exports, "namespaces", {
   enumerable: true,
   get: function get() {
-    return _namespaces.default;
+    return _namespaces["default"];
   }
 });
 Object.defineProperty(exports, "pointer", {
   enumerable: true,
   get: function get() {
-    return _pointer.default;
+    return _pointer["default"];
   }
 });
 Object.defineProperty(exports, "pointers", {
   enumerable: true,
   get: function get() {
-    return _pointers.default;
+    return _pointers["default"];
   }
 });
 Object.defineProperty(exports, "select", {
   enumerable: true,
   get: function get() {
-    return _select.default;
+    return _select["default"];
   }
 });
 Object.defineProperty(exports, "selectAll", {
   enumerable: true,
   get: function get() {
-    return _selectAll.default;
+    return _selectAll["default"];
   }
 });
 Object.defineProperty(exports, "selection", {
   enumerable: true,
   get: function get() {
-    return _index.default;
+    return _index["default"];
   }
 });
 Object.defineProperty(exports, "selector", {
   enumerable: true,
   get: function get() {
-    return _selector.default;
+    return _selector["default"];
   }
 });
 Object.defineProperty(exports, "selectorAll", {
   enumerable: true,
   get: function get() {
-    return _selectorAll.default;
+    return _selectorAll["default"];
   }
 });
 Object.defineProperty(exports, "style", {
@@ -2396,7 +2402,7 @@ Object.defineProperty(exports, "style", {
 Object.defineProperty(exports, "window", {
   enumerable: true,
   get: function get() {
-    return _window.default;
+    return _window["default"];
   }
 });
 var _create = _interopRequireDefault(require("./create.js"));
@@ -2414,7 +2420,7 @@ var _selector = _interopRequireDefault(require("./selector.js"));
 var _selectorAll = _interopRequireDefault(require("./selectorAll.js"));
 var _style = require("./selection/style.js");
 var _window = _interopRequireDefault(require("./window.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 
 },{"./create.js":50,"./creator.js":51,"./local.js":53,"./matcher.js":54,"./namespace.js":55,"./namespaces.js":56,"./pointer.js":57,"./pointers.js":58,"./select.js":59,"./selectAll.js":60,"./selection/index.js":75,"./selection/style.js":95,"./selector.js":97,"./selectorAll.js":98,"./window.js":100}],53:[function(require,module,exports){
 "use strict";
@@ -2422,7 +2428,7 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = local;
+exports["default"] = local;
 var nextId = 0;
 function local() {
   return new Local();
@@ -2455,7 +2461,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.childMatcher = childMatcher;
-exports.default = _default;
+exports["default"] = _default;
 function _default(selector) {
   return function () {
     return this.matches(selector);
@@ -2473,15 +2479,15 @@ function childMatcher(selector) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _namespaces = _interopRequireDefault(require("./namespaces.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(name) {
   var prefix = name += "",
     i = prefix.indexOf(":");
   if (i >= 0 && (prefix = name.slice(0, i)) !== "xmlns") name = name.slice(i + 1);
-  return _namespaces.default.hasOwnProperty(prefix) ? {
-    space: _namespaces.default[prefix],
+  return _namespaces["default"].hasOwnProperty(prefix) ? {
+    space: _namespaces["default"][prefix],
     local: name
   } : name; // eslint-disable-line no-prototype-builtins
 }
@@ -2492,9 +2498,9 @@ function _default(name) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.xhtml = exports.default = void 0;
+exports.xhtml = exports["default"] = void 0;
 var xhtml = exports.xhtml = "http://www.w3.org/1999/xhtml";
-var _default = exports.default = {
+var _default = exports["default"] = {
   svg: "http://www.w3.org/2000/svg",
   xhtml: xhtml,
   xlink: "http://www.w3.org/1999/xlink",
@@ -2508,11 +2514,11 @@ var _default = exports.default = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _sourceEvent = _interopRequireDefault(require("./sourceEvent.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(event, node) {
-  event = (0, _sourceEvent.default)(event);
+  event = (0, _sourceEvent["default"])(event);
   if (node === undefined) node = event.currentTarget;
   if (node) {
     var svg = node.ownerSVGElement || node;
@@ -2536,19 +2542,19 @@ function _default(event, node) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _pointer = _interopRequireDefault(require("./pointer.js"));
 var _sourceEvent = _interopRequireDefault(require("./sourceEvent.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(events, node) {
   if (events.target) {
     // i.e., instanceof Event, not TouchList or iterable
-    events = (0, _sourceEvent.default)(events);
+    events = (0, _sourceEvent["default"])(events);
     if (node === undefined) node = events.currentTarget;
     events = events.touches || [events];
   }
   return Array.from(events, function (event) {
-    return (0, _pointer.default)(event, node);
+    return (0, _pointer["default"])(event, node);
   });
 }
 
@@ -2558,7 +2564,7 @@ function _default(events, node) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./selection/index.js");
 function _default(selector) {
   return typeof selector === "string" ? new _index.Selection([[document.querySelector(selector)]], [document.documentElement]) : new _index.Selection([[selector]], _index.root);
@@ -2570,12 +2576,12 @@ function _default(selector) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _array = _interopRequireDefault(require("./array.js"));
 var _index = require("./selection/index.js");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(selector) {
-  return typeof selector === "string" ? new _index.Selection([document.querySelectorAll(selector)], [document.documentElement]) : new _index.Selection([(0, _array.default)(selector)], _index.root);
+  return typeof selector === "string" ? new _index.Selection([document.querySelectorAll(selector)], [document.documentElement]) : new _index.Selection([(0, _array["default"])(selector)], _index.root);
 }
 
 },{"./array.js":48,"./selection/index.js":75}],61:[function(require,module,exports){
@@ -2584,11 +2590,11 @@ function _default(selector) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _creator = _interopRequireDefault(require("../creator.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(name) {
-  var create = typeof name === "function" ? name : (0, _creator.default)(name);
+  var create = typeof name === "function" ? name : (0, _creator["default"])(name);
   return this.select(function () {
     return this.appendChild(create.apply(this, arguments));
   });
@@ -2600,9 +2606,9 @@ function _default(name) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _namespace = _interopRequireDefault(require("../namespace.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function attrRemove(name) {
   return function () {
     this.removeAttribute(name);
@@ -2636,7 +2642,7 @@ function attrFunctionNS(fullname, value) {
   };
 }
 function _default(name, value) {
-  var fullname = (0, _namespace.default)(name);
+  var fullname = (0, _namespace["default"])(name);
   if (arguments.length < 2) {
     var node = this.node();
     return fullname.local ? node.getAttributeNS(fullname.space, fullname.local) : node.getAttribute(fullname);
@@ -2650,7 +2656,7 @@ function _default(name, value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default() {
   var callback = arguments[0];
   arguments[0] = this;
@@ -2664,7 +2670,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function classArray(string) {
   return string.trim().split(/^|\s+/);
 }
@@ -2739,7 +2745,7 @@ function _default(name, value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function selection_cloneShallow() {
   var clone = this.cloneNode(false),
     parent = this.parentNode;
@@ -2760,11 +2766,11 @@ function _default(deep) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 var _enter = require("./enter.js");
 var _constant = _interopRequireDefault(require("../constant.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function bindIndex(parent, group, enter, update, exit, data) {
   var i = 0,
@@ -2821,7 +2827,7 @@ function bindKey(parent, group, enter, update, exit, data, key) {
     if (node = nodeByKeyValue.get(keyValue)) {
       update[i] = node;
       node.__data__ = data[i];
-      nodeByKeyValue.delete(keyValue);
+      nodeByKeyValue["delete"](keyValue);
     } else {
       enter[i] = new _enter.EnterNode(parent, data[i]);
     }
@@ -2842,7 +2848,7 @@ function _default(value, key) {
   var bind = key ? bindKey : bindIndex,
     parents = this._parents,
     groups = this._groups;
-  if (typeof value !== "function") value = (0, _constant.default)(value);
+  if (typeof value !== "function") value = (0, _constant["default"])(value);
   for (var m = groups.length, update = new Array(m), enter = new Array(m), exit = new Array(m), j = 0; j < m; ++j) {
     var parent = parents[j],
       group = groups[j],
@@ -2888,7 +2894,7 @@ function arraylike(data) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(value) {
   return arguments.length ? this.property("__data__", value) : this.node().__data__;
 }
@@ -2899,11 +2905,11 @@ function _default(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _window = _interopRequireDefault(require("../window.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function dispatchEvent(node, type, params) {
-  var window = (0, _window.default)(node),
+  var window = (0, _window["default"])(node),
     event = window.CustomEvent;
   if (typeof event === "function") {
     event = new event(type, params);
@@ -2933,7 +2939,7 @@ function _default(type, params) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(callback) {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length, node; i < n; ++i) {
@@ -2949,7 +2955,7 @@ function _default(callback) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default() {
   return !this.node();
 }
@@ -2961,12 +2967,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.EnterNode = EnterNode;
-exports.default = _default;
+exports["default"] = _default;
 var _sparse = _interopRequireDefault(require("./sparse.js"));
 var _index = require("./index.js");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default() {
-  return new _index.Selection(this._enter || this._groups.map(_sparse.default), this._parents);
+  return new _index.Selection(this._enter || this._groups.map(_sparse["default"]), this._parents);
 }
 function EnterNode(parent, datum) {
   this.ownerDocument = parent.ownerDocument;
@@ -2997,12 +3003,12 @@ EnterNode.prototype = {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _sparse = _interopRequireDefault(require("./sparse.js"));
 var _index = require("./index.js");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default() {
-  return new _index.Selection(this._exit || this._groups.map(_sparse.default), this._parents);
+  return new _index.Selection(this._exit || this._groups.map(_sparse["default"]), this._parents);
 }
 
 },{"./index.js":75,"./sparse.js":94}],73:[function(require,module,exports){
@@ -3011,12 +3017,12 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 var _matcher = _interopRequireDefault(require("../matcher.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(match) {
-  if (typeof match !== "function") match = (0, _matcher.default)(match);
+  if (typeof match !== "function") match = (0, _matcher["default"])(match);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
     for (var group = groups[j], n = group.length, subgroup = subgroups[j] = [], node, i = 0; i < n; ++i) {
       if ((node = group[i]) && match.call(node, node.__data__, i, group)) {
@@ -3033,7 +3039,7 @@ function _default(match) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function htmlRemove() {
   this.innerHTML = "";
 }
@@ -3059,7 +3065,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Selection = Selection;
-exports.root = exports.default = void 0;
+exports.root = exports["default"] = void 0;
 var _select = _interopRequireDefault(require("./select.js"));
 var _selectAll = _interopRequireDefault(require("./selectAll.js"));
 var _selectChild = _interopRequireDefault(require("./selectChild.js"));
@@ -3094,7 +3100,7 @@ var _datum = _interopRequireDefault(require("./datum.js"));
 var _on = _interopRequireDefault(require("./on.js"));
 var _dispatch = _interopRequireDefault(require("./dispatch.js"));
 var _iterator = _interopRequireDefault(require("./iterator.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
@@ -3112,42 +3118,42 @@ function selection_selection() {
 }
 Selection.prototype = selection.prototype = _defineProperty({
   constructor: Selection,
-  select: _select.default,
-  selectAll: _selectAll.default,
-  selectChild: _selectChild.default,
-  selectChildren: _selectChildren.default,
-  filter: _filter.default,
-  data: _data.default,
-  enter: _enter.default,
-  exit: _exit.default,
-  join: _join.default,
-  merge: _merge.default,
+  select: _select["default"],
+  selectAll: _selectAll["default"],
+  selectChild: _selectChild["default"],
+  selectChildren: _selectChildren["default"],
+  filter: _filter["default"],
+  data: _data["default"],
+  enter: _enter["default"],
+  exit: _exit["default"],
+  join: _join["default"],
+  merge: _merge["default"],
   selection: selection_selection,
-  order: _order.default,
-  sort: _sort.default,
-  call: _call.default,
-  nodes: _nodes.default,
-  node: _node.default,
-  size: _size.default,
-  empty: _empty.default,
-  each: _each.default,
-  attr: _attr.default,
-  style: _style.default,
-  property: _property.default,
-  classed: _classed.default,
-  text: _text.default,
-  html: _html.default,
-  raise: _raise.default,
-  lower: _lower.default,
-  append: _append.default,
-  insert: _insert.default,
-  remove: _remove.default,
-  clone: _clone.default,
-  datum: _datum.default,
-  on: _on.default,
-  dispatch: _dispatch.default
-}, Symbol.iterator, _iterator.default);
-var _default = exports.default = selection;
+  order: _order["default"],
+  sort: _sort["default"],
+  call: _call["default"],
+  nodes: _nodes["default"],
+  node: _node["default"],
+  size: _size["default"],
+  empty: _empty["default"],
+  each: _each["default"],
+  attr: _attr["default"],
+  style: _style["default"],
+  property: _property["default"],
+  classed: _classed["default"],
+  text: _text["default"],
+  html: _html["default"],
+  raise: _raise["default"],
+  lower: _lower["default"],
+  append: _append["default"],
+  insert: _insert["default"],
+  remove: _remove["default"],
+  clone: _clone["default"],
+  datum: _datum["default"],
+  on: _on["default"],
+  dispatch: _dispatch["default"]
+}, Symbol.iterator, _iterator["default"]);
+var _default = exports["default"] = selection;
 
 },{"./append.js":61,"./attr.js":62,"./call.js":63,"./classed.js":64,"./clone.js":65,"./data.js":66,"./datum.js":67,"./dispatch.js":68,"./each.js":69,"./empty.js":70,"./enter.js":71,"./exit.js":72,"./filter.js":73,"./html.js":74,"./insert.js":76,"./iterator.js":77,"./join.js":78,"./lower.js":79,"./merge.js":80,"./node.js":81,"./nodes.js":82,"./on.js":83,"./order.js":84,"./property.js":85,"./raise.js":86,"./remove.js":87,"./select.js":88,"./selectAll.js":89,"./selectChild.js":90,"./selectChildren.js":91,"./size.js":92,"./sort.js":93,"./style.js":95,"./text.js":96}],76:[function(require,module,exports){
 "use strict";
@@ -3155,16 +3161,16 @@ var _default = exports.default = selection;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _creator = _interopRequireDefault(require("../creator.js"));
 var _selector = _interopRequireDefault(require("../selector.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function constantNull() {
   return null;
 }
 function _default(name, before) {
-  var create = typeof name === "function" ? name : (0, _creator.default)(name),
-    select = before == null ? constantNull : typeof before === "function" ? before : (0, _selector.default)(before);
+  var create = typeof name === "function" ? name : (0, _creator["default"])(name),
+    select = before == null ? constantNull : typeof before === "function" ? before : (0, _selector["default"])(before);
   return this.select(function () {
     return this.insertBefore(create.apply(this, arguments), select.apply(this, arguments) || null);
   });
@@ -3177,8 +3183,8 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _callee;
-function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator.return && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, catch: function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
+exports["default"] = _callee;
+function _regeneratorRuntime() { "use strict"; /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */ _regeneratorRuntime = function _regeneratorRuntime() { return e; }; var t, e = {}, r = Object.prototype, n = r.hasOwnProperty, o = Object.defineProperty || function (t, e, r) { t[e] = r.value; }, i = "function" == typeof Symbol ? Symbol : {}, a = i.iterator || "@@iterator", c = i.asyncIterator || "@@asyncIterator", u = i.toStringTag || "@@toStringTag"; function define(t, e, r) { return Object.defineProperty(t, e, { value: r, enumerable: !0, configurable: !0, writable: !0 }), t[e]; } try { define({}, ""); } catch (t) { define = function define(t, e, r) { return t[e] = r; }; } function wrap(t, e, r, n) { var i = e && e.prototype instanceof Generator ? e : Generator, a = Object.create(i.prototype), c = new Context(n || []); return o(a, "_invoke", { value: makeInvokeMethod(t, r, c) }), a; } function tryCatch(t, e, r) { try { return { type: "normal", arg: t.call(e, r) }; } catch (t) { return { type: "throw", arg: t }; } } e.wrap = wrap; var h = "suspendedStart", l = "suspendedYield", f = "executing", s = "completed", y = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} var p = {}; define(p, a, function () { return this; }); var d = Object.getPrototypeOf, v = d && d(d(values([]))); v && v !== r && n.call(v, a) && (p = v); var g = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(p); function defineIteratorMethods(t) { ["next", "throw", "return"].forEach(function (e) { define(t, e, function (t) { return this._invoke(e, t); }); }); } function AsyncIterator(t, e) { function invoke(r, o, i, a) { var c = tryCatch(t[r], t, o); if ("throw" !== c.type) { var u = c.arg, h = u.value; return h && "object" == _typeof(h) && n.call(h, "__await") ? e.resolve(h.__await).then(function (t) { invoke("next", t, i, a); }, function (t) { invoke("throw", t, i, a); }) : e.resolve(h).then(function (t) { u.value = t, i(u); }, function (t) { return invoke("throw", t, i, a); }); } a(c.arg); } var r; o(this, "_invoke", { value: function value(t, n) { function callInvokeWithMethodAndArg() { return new e(function (e, r) { invoke(t, n, e, r); }); } return r = r ? r.then(callInvokeWithMethodAndArg, callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg(); } }); } function makeInvokeMethod(e, r, n) { var o = h; return function (i, a) { if (o === f) throw Error("Generator is already running"); if (o === s) { if ("throw" === i) throw a; return { value: t, done: !0 }; } for (n.method = i, n.arg = a;;) { var c = n.delegate; if (c) { var u = maybeInvokeDelegate(c, n); if (u) { if (u === y) continue; return u; } } if ("next" === n.method) n.sent = n._sent = n.arg;else if ("throw" === n.method) { if (o === h) throw o = s, n.arg; n.dispatchException(n.arg); } else "return" === n.method && n.abrupt("return", n.arg); o = f; var p = tryCatch(e, r, n); if ("normal" === p.type) { if (o = n.done ? s : l, p.arg === y) continue; return { value: p.arg, done: n.done }; } "throw" === p.type && (o = s, n.method = "throw", n.arg = p.arg); } }; } function maybeInvokeDelegate(e, r) { var n = r.method, o = e.iterator[n]; if (o === t) return r.delegate = null, "throw" === n && e.iterator["return"] && (r.method = "return", r.arg = t, maybeInvokeDelegate(e, r), "throw" === r.method) || "return" !== n && (r.method = "throw", r.arg = new TypeError("The iterator does not provide a '" + n + "' method")), y; var i = tryCatch(o, e.iterator, r.arg); if ("throw" === i.type) return r.method = "throw", r.arg = i.arg, r.delegate = null, y; var a = i.arg; return a ? a.done ? (r[e.resultName] = a.value, r.next = e.nextLoc, "return" !== r.method && (r.method = "next", r.arg = t), r.delegate = null, y) : a : (r.method = "throw", r.arg = new TypeError("iterator result is not an object"), r.delegate = null, y); } function pushTryEntry(t) { var e = { tryLoc: t[0] }; 1 in t && (e.catchLoc = t[1]), 2 in t && (e.finallyLoc = t[2], e.afterLoc = t[3]), this.tryEntries.push(e); } function resetTryEntry(t) { var e = t.completion || {}; e.type = "normal", delete e.arg, t.completion = e; } function Context(t) { this.tryEntries = [{ tryLoc: "root" }], t.forEach(pushTryEntry, this), this.reset(!0); } function values(e) { if (e || "" === e) { var r = e[a]; if (r) return r.call(e); if ("function" == typeof e.next) return e; if (!isNaN(e.length)) { var o = -1, i = function next() { for (; ++o < e.length;) if (n.call(e, o)) return next.value = e[o], next.done = !1, next; return next.value = t, next.done = !0, next; }; return i.next = i; } } throw new TypeError(_typeof(e) + " is not iterable"); } return GeneratorFunction.prototype = GeneratorFunctionPrototype, o(g, "constructor", { value: GeneratorFunctionPrototype, configurable: !0 }), o(GeneratorFunctionPrototype, "constructor", { value: GeneratorFunction, configurable: !0 }), GeneratorFunction.displayName = define(GeneratorFunctionPrototype, u, "GeneratorFunction"), e.isGeneratorFunction = function (t) { var e = "function" == typeof t && t.constructor; return !!e && (e === GeneratorFunction || "GeneratorFunction" === (e.displayName || e.name)); }, e.mark = function (t) { return Object.setPrototypeOf ? Object.setPrototypeOf(t, GeneratorFunctionPrototype) : (t.__proto__ = GeneratorFunctionPrototype, define(t, u, "GeneratorFunction")), t.prototype = Object.create(g), t; }, e.awrap = function (t) { return { __await: t }; }, defineIteratorMethods(AsyncIterator.prototype), define(AsyncIterator.prototype, c, function () { return this; }), e.AsyncIterator = AsyncIterator, e.async = function (t, r, n, o, i) { void 0 === i && (i = Promise); var a = new AsyncIterator(wrap(t, r, n, o), i); return e.isGeneratorFunction(r) ? a : a.next().then(function (t) { return t.done ? t.value : a.next(); }); }, defineIteratorMethods(g), define(g, u, "Generator"), define(g, a, function () { return this; }), define(g, "toString", function () { return "[object Generator]"; }), e.keys = function (t) { var e = Object(t), r = []; for (var n in e) r.push(n); return r.reverse(), function next() { for (; r.length;) { var t = r.pop(); if (t in e) return next.value = t, next.done = !1, next; } return next.done = !0, next; }; }, e.values = values, Context.prototype = { constructor: Context, reset: function reset(e) { if (this.prev = 0, this.next = 0, this.sent = this._sent = t, this.done = !1, this.delegate = null, this.method = "next", this.arg = t, this.tryEntries.forEach(resetTryEntry), !e) for (var r in this) "t" === r.charAt(0) && n.call(this, r) && !isNaN(+r.slice(1)) && (this[r] = t); }, stop: function stop() { this.done = !0; var t = this.tryEntries[0].completion; if ("throw" === t.type) throw t.arg; return this.rval; }, dispatchException: function dispatchException(e) { if (this.done) throw e; var r = this; function handle(n, o) { return a.type = "throw", a.arg = e, r.next = n, o && (r.method = "next", r.arg = t), !!o; } for (var o = this.tryEntries.length - 1; o >= 0; --o) { var i = this.tryEntries[o], a = i.completion; if ("root" === i.tryLoc) return handle("end"); if (i.tryLoc <= this.prev) { var c = n.call(i, "catchLoc"), u = n.call(i, "finallyLoc"); if (c && u) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } else if (c) { if (this.prev < i.catchLoc) return handle(i.catchLoc, !0); } else { if (!u) throw Error("try statement without catch or finally"); if (this.prev < i.finallyLoc) return handle(i.finallyLoc); } } } }, abrupt: function abrupt(t, e) { for (var r = this.tryEntries.length - 1; r >= 0; --r) { var o = this.tryEntries[r]; if (o.tryLoc <= this.prev && n.call(o, "finallyLoc") && this.prev < o.finallyLoc) { var i = o; break; } } i && ("break" === t || "continue" === t) && i.tryLoc <= e && e <= i.finallyLoc && (i = null); var a = i ? i.completion : {}; return a.type = t, a.arg = e, i ? (this.method = "next", this.next = i.finallyLoc, y) : this.complete(a); }, complete: function complete(t, e) { if ("throw" === t.type) throw t.arg; return "break" === t.type || "continue" === t.type ? this.next = t.arg : "return" === t.type ? (this.rval = this.arg = t.arg, this.method = "return", this.next = "end") : "normal" === t.type && e && (this.next = e), y; }, finish: function finish(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.finallyLoc === t) return this.complete(r.completion, r.afterLoc), resetTryEntry(r), y; } }, "catch": function _catch(t) { for (var e = this.tryEntries.length - 1; e >= 0; --e) { var r = this.tryEntries[e]; if (r.tryLoc === t) { var n = r.completion; if ("throw" === n.type) { var o = n.arg; resetTryEntry(r); } return o; } } throw Error("illegal catch attempt"); }, delegateYield: function delegateYield(e, r, n) { return this.delegate = { iterator: values(e), resultName: r, nextLoc: n }, "next" === this.method && (this.arg = t), y; } }, e; }
 var _marked = /*#__PURE__*/_regeneratorRuntime().mark(_callee);
 function _callee() {
   var groups, j, m, group, i, n, node;
@@ -3224,7 +3230,7 @@ function _callee() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(onenter, onupdate, onexit) {
   var enter = this.enter(),
     update = this,
@@ -3249,7 +3255,7 @@ function _default(onenter, onupdate, onexit) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function lower() {
   if (this.previousSibling) this.parentNode.insertBefore(this, this.parentNode.firstChild);
 }
@@ -3263,7 +3269,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 function _default(context) {
   var selection = context.selection ? context.selection() : context;
@@ -3286,7 +3292,7 @@ function _default(context) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default() {
   for (var groups = this._groups, j = 0, m = groups.length; j < m; ++j) {
     for (var group = groups[j], i = 0, n = group.length; i < n; ++i) {
@@ -3303,7 +3309,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default() {
   return Array.from(this);
 }
@@ -3314,7 +3320,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function contextListener(listener) {
   return function (event) {
     listener.call(this, event, this.__data__);
@@ -3396,7 +3402,7 @@ function _default(typename, value, options) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default() {
   for (var groups = this._groups, j = -1, m = groups.length; ++j < m;) {
     for (var group = groups[j], i = group.length - 1, next = group[i], node; --i >= 0;) {
@@ -3415,7 +3421,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function propertyRemove(name) {
   return function () {
     delete this[name];
@@ -3442,7 +3448,7 @@ function _default(name, value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function raise() {
   if (this.nextSibling) this.parentNode.appendChild(this);
 }
@@ -3456,7 +3462,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function remove() {
   var parent = this.parentNode;
   if (parent) parent.removeChild(this);
@@ -3471,12 +3477,12 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 var _selector = _interopRequireDefault(require("../selector.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(select) {
-  if (typeof select !== "function") select = (0, _selector.default)(select);
+  if (typeof select !== "function") select = (0, _selector["default"])(select);
   for (var groups = this._groups, m = groups.length, subgroups = new Array(m), j = 0; j < m; ++j) {
     for (var group = groups[j], n = group.length, subgroup = subgroups[j] = new Array(n), node, subnode, i = 0; i < n; ++i) {
       if ((node = group[i]) && (subnode = select.call(node, node.__data__, i, group))) {
@@ -3494,18 +3500,18 @@ function _default(select) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 var _array = _interopRequireDefault(require("../array.js"));
 var _selectorAll = _interopRequireDefault(require("../selectorAll.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function arrayAll(select) {
   return function () {
-    return (0, _array.default)(select.apply(this, arguments));
+    return (0, _array["default"])(select.apply(this, arguments));
   };
 }
 function _default(select) {
-  if (typeof select === "function") select = arrayAll(select);else select = (0, _selectorAll.default)(select);
+  if (typeof select === "function") select = arrayAll(select);else select = (0, _selectorAll["default"])(select);
   for (var groups = this._groups, m = groups.length, subgroups = [], parents = [], j = 0; j < m; ++j) {
     for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) {
       if (node = group[i]) {
@@ -3523,7 +3529,7 @@ function _default(select) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _matcher = require("../matcher.js");
 var find = Array.prototype.find;
 function childFind(match) {
@@ -3544,7 +3550,7 @@ function _default(match) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _matcher = require("../matcher.js");
 var filter = Array.prototype.filter;
 function children() {
@@ -3565,8 +3571,8 @@ function _default(match) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
-function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
+exports["default"] = _default;
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _default() {
@@ -3592,7 +3598,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 function _default(compare) {
   if (!compare) compare = ascending;
@@ -3619,7 +3625,7 @@ function ascending(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(update) {
   return new Array(update.length);
 }
@@ -3630,10 +3636,10 @@ function _default(update) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 exports.styleValue = styleValue;
 var _window = _interopRequireDefault(require("../window.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function styleRemove(name) {
   return function () {
     this.style.removeProperty(name);
@@ -3654,7 +3660,7 @@ function _default(name, value, priority) {
   return arguments.length > 1 ? this.each((value == null ? styleRemove : typeof value === "function" ? styleFunction : styleConstant)(name, value, priority == null ? "" : priority)) : styleValue(this.node(), name);
 }
 function styleValue(node, name) {
-  return node.style.getPropertyValue(name) || (0, _window.default)(node).getComputedStyle(node, null).getPropertyValue(name);
+  return node.style.getPropertyValue(name) || (0, _window["default"])(node).getComputedStyle(node, null).getPropertyValue(name);
 }
 
 },{"../window.js":100}],96:[function(require,module,exports){
@@ -3663,7 +3669,7 @@ function styleValue(node, name) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function textRemove() {
   this.textContent = "";
 }
@@ -3688,7 +3694,7 @@ function _default(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function none() {}
 function _default(selector) {
   return selector == null ? none : function () {
@@ -3702,7 +3708,7 @@ function _default(selector) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function empty() {
   return [];
 }
@@ -3718,7 +3724,7 @@ function _default(selector) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(event) {
   var sourceEvent;
   while (sourceEvent = event.sourceEvent) event = sourceEvent;
@@ -3731,7 +3737,7 @@ function _default(event) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function _default(node) {
   return node.ownerDocument && node.ownerDocument.defaultView // node is a Node
   || node.document && node // node is a Window
@@ -3747,7 +3753,7 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "interval", {
   enumerable: true,
   get: function get() {
-    return _interval.default;
+    return _interval["default"];
   }
 });
 Object.defineProperty(exports, "now", {
@@ -3759,7 +3765,7 @@ Object.defineProperty(exports, "now", {
 Object.defineProperty(exports, "timeout", {
   enumerable: true,
   get: function get() {
-    return _timeout.default;
+    return _timeout["default"];
   }
 });
 Object.defineProperty(exports, "timer", {
@@ -3777,7 +3783,7 @@ Object.defineProperty(exports, "timerFlush", {
 var _timer = require("./timer.js");
 var _timeout = _interopRequireDefault(require("./timeout.js"));
 var _interval = _interopRequireDefault(require("./interval.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 
 },{"./interval.js":102,"./timeout.js":103,"./timer.js":104}],102:[function(require,module,exports){
 "use strict";
@@ -3785,7 +3791,7 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _timer = require("./timer.js");
 function _default(callback, delay, time) {
   var t = new _timer.Timer(),
@@ -3810,7 +3816,7 @@ function _default(callback, delay, time) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _timer = require("./timer.js");
 function _default(callback, delay, time) {
   var t = new _timer.Timer();
@@ -3948,7 +3954,7 @@ function sleep(time) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./transition/index.js");
 var _schedule = require("./transition/schedule.js");
 var root = [null];
@@ -3976,26 +3982,26 @@ Object.defineProperty(exports, "__esModule", {
 Object.defineProperty(exports, "active", {
   enumerable: true,
   get: function get() {
-    return _active.default;
+    return _active["default"];
   }
 });
 Object.defineProperty(exports, "interrupt", {
   enumerable: true,
   get: function get() {
-    return _interrupt.default;
+    return _interrupt["default"];
   }
 });
 Object.defineProperty(exports, "transition", {
   enumerable: true,
   get: function get() {
-    return _index2.default;
+    return _index2["default"];
   }
 });
 require("./selection/index.js");
 var _index2 = _interopRequireDefault(require("./transition/index.js"));
 var _active = _interopRequireDefault(require("./active.js"));
 var _interrupt = _interopRequireDefault(require("./interrupt.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 
 },{"./active.js":105,"./interrupt.js":107,"./selection/index.js":108,"./transition/index.js":119}],107:[function(require,module,exports){
 "use strict";
@@ -4003,7 +4009,7 @@ function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _schedule = require("./transition/schedule.js");
 function _default(node, name) {
   var schedules = node.__transition,
@@ -4033,9 +4039,9 @@ function _default(node, name) {
 var _d3Selection = require("d3-selection");
 var _interrupt = _interopRequireDefault(require("./interrupt.js"));
 var _transition = _interopRequireDefault(require("./transition.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
-_d3Selection.selection.prototype.interrupt = _interrupt.default;
-_d3Selection.selection.prototype.transition = _transition.default;
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
+_d3Selection.selection.prototype.interrupt = _interrupt["default"];
+_d3Selection.selection.prototype.transition = _transition["default"];
 
 },{"./interrupt.js":109,"./transition.js":110,"d3-selection":52}],109:[function(require,module,exports){
 "use strict";
@@ -4043,12 +4049,12 @@ _d3Selection.selection.prototype.transition = _transition.default;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _interrupt = _interopRequireDefault(require("../interrupt.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _default(name) {
   return this.each(function () {
-    (0, _interrupt.default)(this, name);
+    (0, _interrupt["default"])(this, name);
   });
 }
 
@@ -4058,12 +4064,12 @@ function _default(name) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("../transition/index.js");
 var _schedule = _interopRequireDefault(require("../transition/schedule.js"));
 var _d3Ease = require("d3-ease");
 var _d3Timer = require("d3-timer");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 var defaultTiming = {
   time: null,
   // Set on use.
@@ -4090,7 +4096,7 @@ function _default(name) {
   for (var groups = this._groups, m = groups.length, j = 0; j < m; ++j) {
     for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) {
       if (node = group[i]) {
-        (0, _schedule.default)(node, name, id, i, group, timing || inherit(node, id));
+        (0, _schedule["default"])(node, name, id, i, group, timing || inherit(node, id));
       }
     }
   }
@@ -4103,12 +4109,12 @@ function _default(name) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Interpolate = require("d3-interpolate");
 var _d3Selection = require("d3-selection");
 var _tween = require("./tween.js");
 var _interpolate = _interopRequireDefault(require("./interpolate.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function attrRemove(name) {
   return function () {
     this.removeAttribute(name);
@@ -4163,7 +4169,7 @@ function attrFunctionNS(fullname, interpolate, value) {
 }
 function _default(name, value) {
   var fullname = (0, _d3Selection.namespace)(name),
-    i = fullname === "transform" ? _d3Interpolate.interpolateTransformSvg : _interpolate.default;
+    i = fullname === "transform" ? _d3Interpolate.interpolateTransformSvg : _interpolate["default"];
   return this.attrTween(name, typeof value === "function" ? (fullname.local ? attrFunctionNS : attrFunction)(fullname, i, (0, _tween.tweenValue)(this, "attr." + name, value)) : value == null ? (fullname.local ? attrRemoveNS : attrRemove)(fullname) : (fullname.local ? attrConstantNS : attrConstant)(fullname, i, value));
 }
 
@@ -4173,7 +4179,7 @@ function _default(name, value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Selection = require("d3-selection");
 function attrInterpolate(name, i) {
   return function (t) {
@@ -4220,7 +4226,7 @@ function _default(name, value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _schedule = require("./schedule.js");
 function delayFunction(id, value) {
   return function () {
@@ -4243,7 +4249,7 @@ function _default(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _schedule = require("./schedule.js");
 function durationFunction(id, value) {
   return function () {
@@ -4266,7 +4272,7 @@ function _default(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _schedule = require("./schedule.js");
 function easeConstant(id, value) {
   if (typeof value !== "function") throw new Error();
@@ -4285,7 +4291,7 @@ function _default(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _schedule = require("./schedule.js");
 function easeVarying(id, value) {
   return function () {
@@ -4305,7 +4311,7 @@ function _default(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _schedule = require("./schedule.js");
 function _default() {
   var on0,
@@ -4349,7 +4355,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Selection = require("d3-selection");
 var _index = require("./index.js");
 function _default(match) {
@@ -4371,7 +4377,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.Transition = Transition;
-exports.default = transition;
+exports["default"] = transition;
 exports.newId = newId;
 var _d3Selection = require("d3-selection");
 var _attr = _interopRequireDefault(require("./attr.js"));
@@ -4394,7 +4400,7 @@ var _textTween = _interopRequireDefault(require("./textTween.js"));
 var _transition = _interopRequireDefault(require("./transition.js"));
 var _tween = _interopRequireDefault(require("./tween.js"));
 var _end = _interopRequireDefault(require("./end.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
@@ -4415,34 +4421,34 @@ function newId() {
 var selection_prototype = _d3Selection.selection.prototype;
 Transition.prototype = transition.prototype = _defineProperty({
   constructor: Transition,
-  select: _select.default,
-  selectAll: _selectAll.default,
+  select: _select["default"],
+  selectAll: _selectAll["default"],
   selectChild: selection_prototype.selectChild,
   selectChildren: selection_prototype.selectChildren,
-  filter: _filter.default,
-  merge: _merge.default,
-  selection: _selection.default,
-  transition: _transition.default,
+  filter: _filter["default"],
+  merge: _merge["default"],
+  selection: _selection["default"],
+  transition: _transition["default"],
   call: selection_prototype.call,
   nodes: selection_prototype.nodes,
   node: selection_prototype.node,
   size: selection_prototype.size,
   empty: selection_prototype.empty,
   each: selection_prototype.each,
-  on: _on.default,
-  attr: _attr.default,
-  attrTween: _attrTween.default,
-  style: _style.default,
-  styleTween: _styleTween.default,
-  text: _text.default,
-  textTween: _textTween.default,
-  remove: _remove.default,
-  tween: _tween.default,
-  delay: _delay.default,
-  duration: _duration.default,
-  ease: _ease.default,
-  easeVarying: _easeVarying.default,
-  end: _end.default
+  on: _on["default"],
+  attr: _attr["default"],
+  attrTween: _attrTween["default"],
+  style: _style["default"],
+  styleTween: _styleTween["default"],
+  text: _text["default"],
+  textTween: _textTween["default"],
+  remove: _remove["default"],
+  tween: _tween["default"],
+  delay: _delay["default"],
+  duration: _duration["default"],
+  ease: _ease["default"],
+  easeVarying: _easeVarying["default"],
+  end: _end["default"]
 }, Symbol.iterator, selection_prototype[Symbol.iterator]);
 
 },{"./attr.js":111,"./attrTween.js":112,"./delay.js":113,"./duration.js":114,"./ease.js":115,"./easeVarying.js":116,"./end.js":117,"./filter.js":118,"./merge.js":121,"./on.js":122,"./remove.js":123,"./select.js":125,"./selectAll.js":126,"./selection.js":127,"./style.js":128,"./styleTween.js":129,"./text.js":130,"./textTween.js":131,"./transition.js":132,"./tween.js":133,"d3-selection":52}],120:[function(require,module,exports){
@@ -4451,7 +4457,7 @@ Transition.prototype = transition.prototype = _defineProperty({
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Color = require("d3-color");
 var _d3Interpolate = require("d3-interpolate");
 function _default(a, b) {
@@ -4465,7 +4471,7 @@ function _default(a, b) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 function _default(transition) {
   if (transition._id !== this._id) throw new Error();
@@ -4488,7 +4494,7 @@ function _default(transition) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _schedule = require("./schedule.js");
 function start(name) {
   return (name + "").trim().split(/^|\s+/).every(function (t) {
@@ -4523,7 +4529,7 @@ function _default(name, listener) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function removeFunction(id) {
   return function () {
     var parent = this.parentNode;
@@ -4542,7 +4548,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.STARTING = exports.STARTED = exports.SCHEDULED = exports.RUNNING = exports.ENDING = exports.ENDED = exports.CREATED = void 0;
-exports.default = _default;
+exports["default"] = _default;
 exports.get = get;
 exports.init = init;
 exports.set = set;
@@ -4695,12 +4701,12 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Selection = require("d3-selection");
 var _index = require("./index.js");
 var _schedule = _interopRequireWildcard(require("./schedule.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _default(select) {
   var name = this._name,
     id = this._id;
@@ -4710,7 +4716,7 @@ function _default(select) {
       if ((node = group[i]) && (subnode = select.call(node, node.__data__, i, group))) {
         if ("__data__" in node) subnode.__data__ = node.__data__;
         subgroup[i] = subnode;
-        (0, _schedule.default)(subgroup[i], name, id, i, subgroup, (0, _schedule.get)(node, id));
+        (0, _schedule["default"])(subgroup[i], name, id, i, subgroup, (0, _schedule.get)(node, id));
       }
     }
   }
@@ -4724,12 +4730,12 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Selection = require("d3-selection");
 var _index = require("./index.js");
 var _schedule = _interopRequireWildcard(require("./schedule.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _default(select) {
   var name = this._name,
     id = this._id;
@@ -4739,7 +4745,7 @@ function _default(select) {
       if (node = group[i]) {
         for (var children = select.call(node, node.__data__, i, group), child, inherit = (0, _schedule.get)(node, id), k = 0, l = children.length; k < l; ++k) {
           if (child = children[k]) {
-            (0, _schedule.default)(child, name, id, k, children, inherit);
+            (0, _schedule["default"])(child, name, id, k, children, inherit);
           }
         }
         subgroups.push(children);
@@ -4756,7 +4762,7 @@ function _default(select) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Selection = require("d3-selection");
 var Selection = _d3Selection.selection.prototype.constructor;
 function _default() {
@@ -4769,13 +4775,13 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _d3Interpolate = require("d3-interpolate");
 var _d3Selection = require("d3-selection");
 var _schedule = require("./schedule.js");
 var _tween = require("./tween.js");
 var _interpolate = _interopRequireDefault(require("./interpolate.js"));
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function styleNull(name, interpolate) {
   var string00, string10, interpolate0;
   return function () {
@@ -4828,7 +4834,7 @@ function styleMaybeRemove(id, name) {
   };
 }
 function _default(name, value, priority) {
-  var i = (name += "") === "transform" ? _d3Interpolate.interpolateTransformCss : _interpolate.default;
+  var i = (name += "") === "transform" ? _d3Interpolate.interpolateTransformCss : _interpolate["default"];
   return value == null ? this.styleTween(name, styleNull(name, i)).on("end.style." + name, styleRemove(name)) : typeof value === "function" ? this.styleTween(name, styleFunction(name, i, (0, _tween.tweenValue)(this, "style." + name, value))).each(styleMaybeRemove(this._id, name)) : this.styleTween(name, styleConstant(name, i, value), priority).on("end.style." + name, null);
 }
 
@@ -4838,7 +4844,7 @@ function _default(name, value, priority) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function styleInterpolate(name, i, priority) {
   return function (t) {
     this.style.setProperty(name, i.call(this, t), priority);
@@ -4868,7 +4874,7 @@ function _default(name, value, priority) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _tween = require("./tween.js");
 function textConstant(value) {
   return function () {
@@ -4891,7 +4897,7 @@ function _default(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 function textInterpolate(i) {
   return function (t) {
     this.textContent = i.call(this, t);
@@ -4922,11 +4928,11 @@ function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 var _index = require("./index.js");
 var _schedule = _interopRequireWildcard(require("./schedule.js"));
 function _getRequireWildcardCache(e) { if ("function" != typeof WeakMap) return null; var r = new WeakMap(), t = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(e) { return e ? t : r; })(e); }
-function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { default: e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n.default = e, t && t.set(e, n), n; }
+function _interopRequireWildcard(e, r) { if (!r && e && e.__esModule) return e; if (null === e || "object" != _typeof(e) && "function" != typeof e) return { "default": e }; var t = _getRequireWildcardCache(r); if (t && t.has(e)) return t.get(e); var n = { __proto__: null }, a = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var u in e) if ("default" !== u && {}.hasOwnProperty.call(e, u)) { var i = a ? Object.getOwnPropertyDescriptor(e, u) : null; i && (i.get || i.set) ? Object.defineProperty(n, u, i) : n[u] = e[u]; } return n["default"] = e, t && t.set(e, n), n; }
 function _default() {
   var name = this._name,
     id0 = this._id,
@@ -4935,7 +4941,7 @@ function _default() {
     for (var group = groups[j], n = group.length, node, i = 0; i < n; ++i) {
       if (node = group[i]) {
         var inherit = (0, _schedule.get)(node, id0);
-        (0, _schedule.default)(node, name, id1, i, group, {
+        (0, _schedule["default"])(node, name, id1, i, group, {
           time: inherit.time + inherit.delay + inherit.duration,
           delay: 0,
           duration: inherit.duration,
@@ -4953,7 +4959,7 @@ function _default() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = _default;
+exports["default"] = _default;
 exports.tweenValue = tweenValue;
 var _schedule = require("./schedule.js");
 function tweenRemove(id, name) {
@@ -5395,265 +5401,69 @@ module.exports = debounce;
 
 }).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],135:[function(require,module,exports){
-(function (process){(function (){
 "use strict";
 
-var _require = require('./url-alphabet/index.cjs'),
-  urlAlphabet = _require.urlAlphabet;
-if (process.env.NODE_ENV !== 'production') {
-  if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative' && typeof crypto === 'undefined') {
-    throw new Error('React Native does not have a built-in secure random generator. ' + 'If you don’t need unpredictable IDs use `nanoid/non-secure`. ' + 'For secure IDs, import `react-native-get-random-values` ' + 'before Nano ID.');
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.random = exports.nanoid = exports.customRandom = exports.customAlphabet = void 0;
+Object.defineProperty(exports, "urlAlphabet", {
+  enumerable: true,
+  get: function get() {
+    return _index.urlAlphabet;
   }
-  if (typeof msCrypto !== 'undefined' && typeof crypto === 'undefined') {
-    throw new Error('Import file with `if (!window.crypto) window.crypto = window.msCrypto`' + ' before importing Nano ID to fix IE 11 support');
-  }
-  if (typeof crypto === 'undefined') {
-    throw new Error('Your browser does not have secure random generator. ' + 'If you don’t need unpredictable IDs, you can use nanoid/non-secure.');
-  }
-}
-var random = function random(bytes) {
+});
+var _index = require("./url-alphabet/index.js");
+var random = exports.random = function random(bytes) {
   return crypto.getRandomValues(new Uint8Array(bytes));
 };
-var customRandom = function customRandom(alphabet, size, getRandom) {
-  var mask = (2 << Math.log(alphabet.length - 1) / Math.LN2) - 1;
-  var step = -~(1.6 * mask * size / alphabet.length);
+var customRandom = exports.customRandom = function customRandom(alphabet, defaultSize, getRandom) {
+  var mask = (2 << Math.log2(alphabet.length - 1)) - 1;
+  var step = -~(1.6 * mask * defaultSize / alphabet.length);
   return function () {
+    var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultSize;
     var id = '';
     while (true) {
       var bytes = getRandom(step);
-      var j = step;
+      var j = step | 0;
       while (j--) {
         id += alphabet[bytes[j] & mask] || '';
-        if (id.length === size) return id;
+        if (id.length >= size) return id;
       }
     }
   };
 };
-var customAlphabet = function customAlphabet(alphabet, size) {
-  return customRandom(alphabet, size, random);
+var customAlphabet = exports.customAlphabet = function customAlphabet(alphabet) {
+  var size = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 21;
+  return customRandom(alphabet, size | 0, random);
 };
-var nanoid = function nanoid() {
+var nanoid = exports.nanoid = function nanoid() {
   var size = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 21;
   var id = '';
-  var bytes = crypto.getRandomValues(new Uint8Array(size));
+  var bytes = crypto.getRandomValues(new Uint8Array(size |= 0));
   while (size--) {
-    var byte = bytes[size] & 63;
-    if (byte < 36) {
-      id += byte.toString(36);
-    } else if (byte < 62) {
-      id += (byte - 26).toString(36).toUpperCase();
-    } else if (byte < 63) {
-      id += '_';
-    } else {
-      id += '-';
-    }
+    id += _index.urlAlphabet[bytes[size] & 63];
   }
   return id;
 };
-module.exports = {
-  nanoid: nanoid,
-  customAlphabet: customAlphabet,
-  customRandom: customRandom,
-  urlAlphabet: urlAlphabet,
-  random: random
-};
 
-}).call(this)}).call(this,require('_process'))
-},{"./url-alphabet/index.cjs":136,"_process":137}],136:[function(require,module,exports){
+},{"./url-alphabet/index.js":136}],136:[function(require,module,exports){
 "use strict";
 
-var urlAlphabet = 'useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict';
-module.exports = {
-  urlAlphabet: urlAlphabet
-};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.urlAlphabet = void 0;
+var urlAlphabet = exports.urlAlphabet = 'useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict';
 
 },{}],137:[function(require,module,exports){
-"use strict";
-
-// shim for using process in browser
-var process = module.exports = {};
-
-// cached from whatever global is present so that test runners that stub it
-// don't break things.  But we need to wrap it in a try catch in case it is
-// wrapped in strict mode code which doesn't define any globals.  It's inside a
-// function because try/catches deoptimize in certain engines.
-
-var cachedSetTimeout;
-var cachedClearTimeout;
-function defaultSetTimout() {
-  throw new Error('setTimeout has not been defined');
-}
-function defaultClearTimeout() {
-  throw new Error('clearTimeout has not been defined');
-}
-(function () {
-  try {
-    if (typeof setTimeout === 'function') {
-      cachedSetTimeout = setTimeout;
-    } else {
-      cachedSetTimeout = defaultSetTimout;
-    }
-  } catch (e) {
-    cachedSetTimeout = defaultSetTimout;
-  }
-  try {
-    if (typeof clearTimeout === 'function') {
-      cachedClearTimeout = clearTimeout;
-    } else {
-      cachedClearTimeout = defaultClearTimeout;
-    }
-  } catch (e) {
-    cachedClearTimeout = defaultClearTimeout;
-  }
-})();
-function runTimeout(fun) {
-  if (cachedSetTimeout === setTimeout) {
-    //normal enviroments in sane situations
-    return setTimeout(fun, 0);
-  }
-  // if setTimeout wasn't available but was latter defined
-  if ((cachedSetTimeout === defaultSetTimout || !cachedSetTimeout) && setTimeout) {
-    cachedSetTimeout = setTimeout;
-    return setTimeout(fun, 0);
-  }
-  try {
-    // when when somebody has screwed with setTimeout but no I.E. maddness
-    return cachedSetTimeout(fun, 0);
-  } catch (e) {
-    try {
-      // When we are in I.E. but the script has been evaled so I.E. doesn't trust the global object when called normally
-      return cachedSetTimeout.call(null, fun, 0);
-    } catch (e) {
-      // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error
-      return cachedSetTimeout.call(this, fun, 0);
-    }
-  }
-}
-function runClearTimeout(marker) {
-  if (cachedClearTimeout === clearTimeout) {
-    //normal enviroments in sane situations
-    return clearTimeout(marker);
-  }
-  // if clearTimeout wasn't available but was latter defined
-  if ((cachedClearTimeout === defaultClearTimeout || !cachedClearTimeout) && clearTimeout) {
-    cachedClearTimeout = clearTimeout;
-    return clearTimeout(marker);
-  }
-  try {
-    // when when somebody has screwed with setTimeout but no I.E. maddness
-    return cachedClearTimeout(marker);
-  } catch (e) {
-    try {
-      // When we are in I.E. but the script has been evaled so I.E. doesn't  trust the global object when called normally
-      return cachedClearTimeout.call(null, marker);
-    } catch (e) {
-      // same as above but when it's a version of I.E. that must have the global object for 'this', hopfully our context correct otherwise it will throw a global error.
-      // Some versions of I.E. have different rules for clearTimeout vs setTimeout
-      return cachedClearTimeout.call(this, marker);
-    }
-  }
-}
-var queue = [];
-var draining = false;
-var currentQueue;
-var queueIndex = -1;
-function cleanUpNextTick() {
-  if (!draining || !currentQueue) {
-    return;
-  }
-  draining = false;
-  if (currentQueue.length) {
-    queue = currentQueue.concat(queue);
-  } else {
-    queueIndex = -1;
-  }
-  if (queue.length) {
-    drainQueue();
-  }
-}
-function drainQueue() {
-  if (draining) {
-    return;
-  }
-  var timeout = runTimeout(cleanUpNextTick);
-  draining = true;
-  var len = queue.length;
-  while (len) {
-    currentQueue = queue;
-    queue = [];
-    while (++queueIndex < len) {
-      if (currentQueue) {
-        currentQueue[queueIndex].run();
-      }
-    }
-    queueIndex = -1;
-    len = queue.length;
-  }
-  currentQueue = null;
-  draining = false;
-  runClearTimeout(timeout);
-}
-process.nextTick = function (fun) {
-  var args = new Array(arguments.length - 1);
-  if (arguments.length > 1) {
-    for (var i = 1; i < arguments.length; i++) {
-      args[i - 1] = arguments[i];
-    }
-  }
-  queue.push(new Item(fun, args));
-  if (queue.length === 1 && !draining) {
-    runTimeout(drainQueue);
-  }
-};
-
-// v8 likes predictible objects
-function Item(fun, array) {
-  this.fun = fun;
-  this.array = array;
-}
-Item.prototype.run = function () {
-  this.fun.apply(null, this.array);
-};
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-process.version = ''; // empty string to avoid regexp issues
-process.versions = {};
-function noop() {}
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-process.prependListener = noop;
-process.prependOnceListener = noop;
-process.listeners = function (name) {
-  return [];
-};
-process.binding = function (name) {
-  throw new Error('process.binding is not supported');
-};
-process.cwd = function () {
-  return '/';
-};
-process.chdir = function (dir) {
-  throw new Error('process.chdir is not supported');
-};
-process.umask = function () {
-  return 0;
-};
-
-},{}],138:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.getDefaultColors = void 0;
-var defaultColors = ['#FF4589', '#FF5050', '#05DF9D', '#4FF2FD', '#2D9CDB', '#A0BBFF', '#FFD76F', '#F2C94C', '#FF9A9A', '#FFB178'];
+var defaultColors = ["#FF4589", "#FF5050", "#05DF9D", "#4FF2FD", "#2D9CDB", "#A0BBFF", "#FFD76F", "#F2C94C", "#FF9A9A", "#FFB178"];
 var getDefaultColors = exports.getDefaultColors = function getDefaultColors(number) {
   var colors = [].concat(defaultColors);
   var colorSet = [];
@@ -5668,7 +5478,7 @@ var getDefaultColors = exports.getDefaultColors = function getDefaultColors(numb
   return colorSet;
 };
 
-},{}],139:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 "use strict";
 
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
@@ -5688,7 +5498,7 @@ function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLim
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t.return && (u = t.return(), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 /**
  * Add tooltip and path click handlers according to the configuration 
@@ -5903,7 +5713,7 @@ var getTooltipElement = function getTooltipElement() {
   return (0, _d3Selection.select)("#d3-funnel-js-tooltip");
 };
 
-},{"./number":143,"d3-selection":52,"d3-timer":101}],140:[function(require,module,exports){
+},{"./number":142,"d3-selection":52,"d3-timer":101}],139:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -5916,7 +5726,7 @@ var _d3Ease = require("d3-ease");
 var _lodash = _interopRequireDefault(require("lodash.debounce"));
 var _d3Handlers = require("./d3-handlers");
 var _number = require("./number");
-function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
+function _interopRequireDefault(e) { return e && e.__esModule ? e : { "default": e }; }
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
@@ -6496,7 +6306,7 @@ var updateEvents = exports.updateEvents = function updateEvents(_ref15) {
   if (resize && !resizeEventExists) {
     var wait = (resize === null || resize === void 0 ? void 0 : resize.wait) || 0;
     var onResize = events === null || events === void 0 ? void 0 : events['onResize'];
-    var debouncedResizeHandler = (0, _lodash.default)(onResize, wait);
+    var debouncedResizeHandler = (0, _lodash["default"])(onResize, wait);
     context.setDebouncedResizeHandler(debouncedResizeHandler);
     debouncedResizeHandler();
     (0, _d3Selection.select)(window).on("resize.".concat(id), debouncedResizeHandler);
@@ -6506,7 +6316,7 @@ var updateEvents = exports.updateEvents = function updateEvents(_ref15) {
   }
 };
 
-},{"./d3-handlers":139,"./number":143,"d3-ease":16,"d3-selection":52,"d3-transition":106,"lodash.debounce":134}],141:[function(require,module,exports){
+},{"./d3-handlers":138,"./number":142,"d3-ease":16,"d3-selection":52,"d3-transition":106,"lodash.debounce":134}],140:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6570,13 +6380,13 @@ var getLogger = exports.getLogger = function getLogger(_ref) {
   };
 };
 
-},{}],142:[function(require,module,exports){
+},{}],141:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = void 0;
+exports["default"] = void 0;
 var _number = require("./number");
 var _colors = require("./colors");
 var _path = require("./path");
@@ -6584,7 +6394,7 @@ var _d = require("./d3");
 var _nanoid = require("nanoid");
 var _utils = require("./utils");
 var _logger = require("./logger");
-function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t.return || t.return(); } finally { if (u) throw o; } } }; }
+function _createForOfIteratorHelper(r, e) { var t = "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (!t) { if (Array.isArray(r) || (t = _unsupportedIterableToArray(r)) || e && r && "number" == typeof r.length) { t && (r = t); var _n = 0, F = function F() {}; return { s: F, n: function n() { return _n >= r.length ? { done: !0 } : { done: !1, value: r[_n++] }; }, e: function e(r) { throw r; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var o, a = !0, u = !1; return { s: function s() { t = t.call(r); }, n: function n() { var r = t.next(); return a = r.done, r; }, e: function e(r) { u = !0, o = r; }, f: function f() { try { a || null == t["return"] || t["return"](); } finally { if (u) throw o; } } }; }
 function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -7392,9 +7202,9 @@ var FunnelGraph = /*#__PURE__*/function () {
     }
   }]);
 }();
-var _default = exports.default = FunnelGraph;
+var _default = exports["default"] = FunnelGraph;
 
-},{"./colors":138,"./d3":140,"./logger":141,"./number":143,"./path":144,"./utils":145,"nanoid":135}],143:[function(require,module,exports){
+},{"./colors":137,"./d3":139,"./logger":140,"./number":142,"./path":143,"./utils":144,"nanoid":135}],142:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7408,7 +7218,7 @@ var formatNumber = exports.formatNumber = function formatNumber(number) {
   return Number(number).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 };
 
-},{}],144:[function(require,module,exports){
+},{}],143:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7511,7 +7321,7 @@ var getCrossAxisPoints = exports.getCrossAxisPoints = function getCrossAxisPoint
     });
     totalValues.push(_toConsumableArray(totalValues).pop());
     var minThickness = (max > 0 ? dimension * 0.005 : 0) + (max > 0 ? dimension / max * 0.1 : 0);
-    points.push(totalValues.map(function (value, index) {
+    points.push(totalValues.map(function (value) {
       if (!value && allZ) {
         return 0;
       }
@@ -7672,7 +7482,7 @@ var createVerticalPath = function createVerticalPath(index, X, XNext, Y) {
   return str;
 };
 
-},{"./number":143}],145:[function(require,module,exports){
+},{"./number":142}],144:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -7703,5 +7513,5 @@ var normalizeArray = exports.normalizeArray = function normalizeArray(arr) {
   return nArray;
 };
 
-},{"./logger":141}]},{},[1])(1)
+},{"./logger":140}]},{},[1])(1)
 });

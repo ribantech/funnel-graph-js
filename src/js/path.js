@@ -85,8 +85,8 @@ const getCrossAxisPoints = ({
         totalValues.push([...totalValues].pop());
         const minThickness = (max > 0 ? dimension * 0.005 : 0) + (max > 0 ? (dimension / max) * 0.1 : 0);
 
-        
-        points.push(totalValues.map( (value, index) => {
+
+        points.push(totalValues.map((value) => {
             if (!value && allZ) {
                 return 0;
             }
@@ -97,7 +97,7 @@ const getCrossAxisPoints = ({
             const point = roundPoint(Math.max(calcValue, minThickness)) - (value ? minimumThreshold / 2 : 0);
             return isNaN(point) ? 0 : point;
         }));
-        
+
         // percentages with duplicated last value
         const percentagesFull = percentages2d;
         let pointsOfFirstPath = points[0];
@@ -113,13 +113,13 @@ const getCrossAxisPoints = ({
                 ));
             }
 
-            newPoints = newPoints?.map( value => isNaN(value) ? 0 : value )
+            newPoints = newPoints?.map(value => isNaN(value) ? 0 : value)
             // duplicate the last value as points #2 and #3 have the same value on the cross axis
             newPoints.push([...newPoints].pop());
             points.push(newPoints);
         }
 
-        pointsOfFirstPath = pointsOfFirstPath?.map( value => isNaN(value) ? 0 : value )
+        pointsOfFirstPath = pointsOfFirstPath?.map(value => isNaN(value) ? 0 : value)
 
         const allZeros = pointsOfFirstPath.every(value => value === 0);
         if (allZeros) {

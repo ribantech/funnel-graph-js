@@ -112,9 +112,9 @@ const updateRootSVG = ({ context, rotateFrom, rotateTo }) => {
 
     if (d3Svg) {
         const root = d3Svg
-            // .transition()
-            // .delay(500)
-            // .duration(1000)
+        // .transition()
+        // .delay(500)
+        // .duration(1000)
 
         if (!isNaN(width) && !isNaN(height)) {
             if (responsive?.width) {
@@ -258,12 +258,12 @@ const getGroupLabelDataInfo = ({ context }) => (d, i) => {
         subLabels: context.getSubLabels()
     };
 
-    const infoItemValues = data.values.map(item => is2d ? item.reduce((acc, current) => acc + current, 0) : item ) || [];
+    const infoItemValues = data.values.map(item => is2d ? item.reduce((acc, current) => acc + current, 0) : item) || [];
     const infoItemLabels = data.labels || [];
 
     const sectionDetailsAvailable = (data.subLabels?.length && is2d);
-    const sectionsDetailsObject = sectionDetailsAvailable ? data.values.map(arr => arr.map( (nestedArr, index) => ( { value: nestedArr, name: data.subLabels?.[index] || "NA" } ))) : undefined;
-    const sectionsDetails = sectionDetailsAvailable ? `, "sectionsDetails": ${JSON.stringify(sectionsDetailsObject)}` : ""; 
+    const sectionsDetailsObject = sectionDetailsAvailable ? data.values.map(arr => arr.map((nestedArr, index) => ({ value: nestedArr, name: data.subLabels?.[index] || "NA" }))) : undefined;
+    const sectionsDetails = sectionDetailsAvailable ? `, "sectionsDetails": ${JSON.stringify(sectionsDetailsObject)}` : "";
 
     return `{ "mouseOnTooltipLabel": true ,"values": ${JSON.stringify(infoItemValues)}, "labels": ${JSON.stringify(infoItemLabels)} ${sectionsDetails} }`;
 }
@@ -472,8 +472,8 @@ const drawInfo = ({
                             addGroupLabelHandler(g, i);
 
                         })
-                        .transition() 
-                        .duration(400) 
+                        .transition()
+                        .duration(400)
                         .on("end", function (d, i, nodes) {
                             const pathElement = select(this);
                             pathElement.style("pointer-events", "all");
@@ -482,56 +482,56 @@ const drawInfo = ({
                 },
 
                 update => update
-                .attr('data-info', getDataInfoHandler)
-                .each(function (d, i) {
+                    .attr('data-info', getDataInfoHandler)
+                    .each(function (d, i) {
 
-                    const x = !vertical ? calcTextPos(i) : margin.text.left;
-                    const y = !vertical ? margin.text.top : calcTextPos(i);
+                        const x = !vertical ? calcTextPos(i) : margin.text.left;
+                        const y = !vertical ? margin.text.top : calcTextPos(i);
 
-                    const offsetValue = { value: 0 };
-                    const textHandlerValue = onEachTextHandler({ offset: offsetValue });
+                        const offsetValue = { value: 0 };
+                        const textHandlerValue = onEachTextHandler({ offset: offsetValue });
 
-                    const g = select(this);
-                    g.select(".label__value")
-                        .attr('x', x)
-                        .attr('y', y)
-                        .text(d => labelFormatCallback({ ...d, index: i }))
-                        .style('opacity', 0.5)
-                        .transition()
-                        .duration(400)
-                        .ease(easePolyInOut)
-                        .style('opacity', 1)
+                        const g = select(this);
+                        g.select(".label__value")
+                            .attr('x', x)
+                            .attr('y', y)
+                            .text(d => labelFormatCallback({ ...d, index: i }))
+                            .style('opacity', 0.5)
+                            .transition()
+                            .duration(400)
+                            .ease(easePolyInOut)
+                            .style('opacity', 1)
 
-                        .each(textHandlerValue);
+                            .each(textHandlerValue);
 
-                    const textHandlerTitle = onEachTextHandler({ offset: offsetValue });
-                    g.select(".label__title")
-                        .attr('x', x)
-                        .attr('y', y)
-                        .text(d => d.label)
-                        .each(textHandlerTitle);
+                        const textHandlerTitle = onEachTextHandler({ offset: offsetValue });
+                        g.select(".label__title")
+                            .attr('x', x)
+                            .attr('y', y)
+                            .text(d => d.label)
+                            .each(textHandlerTitle);
 
-                    const textHandlerPercentage = onEachTextHandler({ offset: offsetValue });
-                    g.select(".label__percentage")
-                        .attr('x', x)
-                        .attr('y', y)
-                        .text(d => d.percentage)
-                        .each(textHandlerPercentage);
+                        const textHandlerPercentage = onEachTextHandler({ offset: offsetValue });
+                        g.select(".label__percentage")
+                            .attr('x', x)
+                            .attr('y', y)
+                            .text(d => d.percentage)
+                            .each(textHandlerPercentage);
 
-                    removeClickEvent(g);
-                    addGroupLabelHandler(g, i);
-                })
-                .transition() 
-                .duration(400) 
-                .on("end", function (d, i, nodes) {
-                    const pathElement = select(this);
-                    pathElement.style("pointer-events", "all");
-                    groupLabelsCallbackHandler(d, i, nodes);
-                })
-                ,exit => exit
+                        removeClickEvent(g);
+                        addGroupLabelHandler(g, i);
+                    })
+                    .transition()
+                    .duration(400)
+                    .on("end", function (d, i, nodes) {
+                        const pathElement = select(this);
+                        pathElement.style("pointer-events", "all");
+                        groupLabelsCallbackHandler(d, i, nodes);
+                    })
+                , exit => exit
                     .each(function () {
-                       const g = select(this);
-                       removeClickEvent(g);
+                        const g = select(this);
+                        removeClickEvent(g);
                     })
                     .remove()
             );
@@ -683,7 +683,7 @@ const updateEvents = ({ context, events }) => {
     }
 
     if (!resize && resizeEventExists) {
-        select(window).on(`resize.${id}`, null);   
+        select(window).on(`resize.${id}`, null);
     }
 };
 
